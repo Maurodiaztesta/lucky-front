@@ -1,0 +1,33 @@
+.containerInput{
+display: flex;
+justify-content: center;
+}
+.inputBuscar{
+border-radius: 15px;
+border: 1px solid rgb(189,210,214);
+width: 339pt;
+height: 28pt;
+
+}
+// .input-icono {
+//     background-image: url('../../../public/assets/img/logo/lupa.png');
+//     background-repeat: no-repeat;
+//     background-position: 4px center;
+//     background-size: 20px;
+//     display: flex;
+//     justify-content: end;
+//     align-items: end;
+//     width: 300px;
+//     padding-left: 28px;
+//     height: 30px;
+//     border: 1px solid rgba(9, 113, 163, 1);
+//     border-radius: 3px;
+//   }
+//   .input-icono input {
+//     width: 100%;
+//     font-size: 0.9em;
+//     border: none;
+//   }
+//   .input-icono input:focus {
+//     outline: none;
+//   }
