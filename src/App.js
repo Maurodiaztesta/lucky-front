@@ -1,6 +1,7 @@
-import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import './App.scss';
 import SplashPage from './pages/SplashPage/SplashPage';
+
 
 function App() {
   return (
@@ -9,9 +10,11 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<SplashPage></SplashPage>}/>
+            
           </Routes>
         </main>
       </Router>
+  
     </div>
   );
 }
