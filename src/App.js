@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import LoginElectionPage from "./pages/LoginElectionPage/LoginElectionPage";
 
 
+
 function App() {
   return (
     <div>
@@ -19,6 +20,7 @@ function App() {
           </Routes>
         </main>
       </Router>
+  
     </div>
   );
 }
