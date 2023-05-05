@@ -38,13 +38,13 @@ const Searcher = () => {
   return (
     <div>
       <div className="containerInput">
-
+      <img className="back" src="../../assets/img/logo/back.png" alt="back"></img>
             <input type="text" className="inputBuscar"
             // value={busqueda}
             placeholder="     Buscar"
                 // onChange={handleChange}
             />
-            <button className=""></button>
+            <img className="back" src="../../assets/img/logo/filtro.png" alt="filter"></img>
         
     </div>
     </div>
