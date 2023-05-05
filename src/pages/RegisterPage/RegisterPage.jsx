@@ -18,7 +18,7 @@ const RegisterPage = () => {
   return (
     <div className="padre">
         <div className="padre__header">
-            <img className="padre__header--img" src="/assets/img/logo/logo_titulo_junto.png"></img>
+            <a href="http://localhost:3000/"><img className="padre__header--img" src="/assets/img/logo/logo_titulo_junto.png"></img></a>
             <h3 className="padre__header--title">¡Hola! para continuar, necesitas crear una cuenta.</h3>
         </div>
         <form className="padre__form" onSubmit={handleSubmit(onSubmit)}>
