@@ -21,7 +21,7 @@ const LoginPage = () => {
   return (
     <div className="padre">
         <div className="padre__header">
-            <img className="padre__header--img" src="/assets/img/logo/logo_titulo_junto.png"></img>
+            <a href="http://localhost:3000/"><img className="padre__header--img" src="/assets/img/logo/logo_titulo_junto.png"></img></a>
             <h3 className="padre__header--title">¡Hola! para continuar, inicia sesión o crea una cuenta.</h3>
         </div>
         <form className="padre__form" onSubmit={handleSubmit(onSubmit)}>
@@ -37,7 +37,8 @@ const LoginPage = () => {
             
             <div className="padre__form--botones">
                 <button className="padre__form--botones--is">Iniciar sesión</button>
-                <button className="padre__form--botones--cc">Crear cuenta</button>
+                <a href="http://localhost:3000/register" className="padre__form--botones--a">Crear cuenta</a>
+                {/* <button className="padre__form--botones--cc">Crear cuenta</button> */}
             </div>
         </form>
     </div>
