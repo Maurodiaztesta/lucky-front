@@ -1,13 +1,21 @@
 .containerInput{
 display: flex;
-justify-content: center;
+justify-content: space-between;
+margin-left: 10px;
+margin-right: 10px;
+margin-top: 43px;
+
 }
 .inputBuscar{
 border-radius: 15px;
 border: 1px solid rgb(189,210,214);
-width: 339pt;
+width: 200pt;
 height: 28pt;
 
+}
+.back{
+    width: 24pt;
+    height: 24pt;
 }
 // .input-icono {
 //     background-image: url('../../../public/assets/img/logo/lupa.png');
