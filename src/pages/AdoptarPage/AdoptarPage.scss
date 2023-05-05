@@ -1,0 +1,76 @@
+.padre{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__top{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &--mascotas{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            &--añadir{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &--h2{
+                    font-size: 16px;
+                    color: #01748E;
+                }
+                &--img{
+                    width: 24px;
+                }
+            }
+            &--add{
+                font-size: 12px;
+            }
+        }
+    }
+    &__bot{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &--button{
+            width: 352px;
+            height: 50px;
+            border: 2px solid #BDD2D6;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &--p{
+                margin-left: 10px;
+                font-size: 16px;
+            }
+            &--img{
+                margin-right: 10px;
+                width: 15px;
+            }
+        }
+        &--TG{
+            width: 90%;
+            &--t{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &--h2{
+                    font-size: 16px;
+                    color: #01748E;
+                }
+                &--img{
+                    width: 24px;
+                }
+            }
+        }
+    }
+}
