@@ -1,9 +1,9 @@
-
 import "./SplashPage.scss"
 import React from 'react'
 
 const SplashPage = () => {
   return (
+    
     
     <a>
       <div className="padre">
@@ -11,7 +11,7 @@ const SplashPage = () => {
         <img className="padre__titulo" src='/assets/img/logo/lucky_titulo.png' alt='titulo'></img>
       </div>
     </a> 
-   
+    
   )
 }
 

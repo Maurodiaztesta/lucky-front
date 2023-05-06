@@ -1,4 +1,4 @@
-.padre{
+.APpadre{
     width: 100%;
     height: 100vh;
     display: flex;
@@ -71,6 +71,9 @@
                     width: 24px;
                 }
             }
+            &--gallery{
+                width: 100%;
+            }    
         }
     }
 }
