@@ -1,4 +1,4 @@
-import "./SplashPage.scss"
+import "./SplashPage.css"
 import React from 'react'
 
 const SplashPage = () => {

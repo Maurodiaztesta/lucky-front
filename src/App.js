@@ -1,5 +1,5 @@
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-import './App.scss';
+import './App.css';
 import SplashPage from './pages/SplashPage/SplashPage';
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
@@ -33,7 +33,6 @@ function App() {
             <Route path="/filterResults" element={<ResultadosFiltroPage/>}/> 
             <Route path="/filters" element={<FiltersPage/>}/> 
             <Route path="/perfilanimal" element={<PerfilAnimalPage></PerfilAnimalPage>}/> 
-
           </Routes>
         </main>
       </Router>

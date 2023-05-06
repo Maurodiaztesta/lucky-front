@@ -1,5 +1,5 @@
 import React from 'react'
-import "./FiltersPage.scss"
+import "./FiltersPage.css"
 
 const FiltersPage = () => {
   return (
