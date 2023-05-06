@@ -1,27 +1,19 @@
 import NavBar from "../../components/NavBar/NavBar";
-import "./ProfilePage.scss";
-
+import "./MasPage.scss"
 import React from "react";
 
-const ProfilePage = () => {
+const MasPage = () => {
   return (
     <>
       <div className="ProfContainer">
-        <div className="Img_Center">
-          <img
-            className="ImageProf"
-            src="../../../assets/img/logo_seleccionado/group.png"
-            alt="profileIMG"
-          ></img>
-        </div>
         <div className="OptContainer">
           <div className="ProfOptions">
             <img
               className="opt_img"
-              src="../../../assets/img/logo_seleccionado/chicaBlue.png"
+              src="../../../assets/img/logo/caseta.png"
               alt="Perfil"
             ></img>
-            <h3 className="opt_text">Mi Perfil </h3>
+            <h3 className="opt_text">Asociaciones protectoras </h3>
           </div>
           <img
             className="arrow"
@@ -33,10 +25,10 @@ const ProfilePage = () => {
           <div className="ProfOptions">
             <img
               className="opt_img"
-              src="../../../assets/img/logo_seleccionado/localizationBlue.png"
+              src="../../../assets/img/logo/calendario.png"
               alt="Perfil"
             ></img>
-            <h3 className="opt_text">Direcciones </h3>
+            <h3 className="opt_text">Eventos </h3>
           </div>
           <img
             className="arrow"
@@ -48,10 +40,10 @@ const ProfilePage = () => {
           <div className="ProfOptions">
             <img
               className="opt_img"
-              src="../../../assets/img/logo_seleccionado/favoritosCopy.png"
+              src="../../../assets/img/logo/blog.png"
               alt="Perfil"
             ></img>
-            <h3 className="opt_text">Favoritos </h3>
+            <h3 className="opt_text">Curiosidades </h3>
           </div>
           <img
             className="arrow"
@@ -63,26 +55,10 @@ const ProfilePage = () => {
           <div className="ProfOptions">
             <img
               className="opt_img"
-              src="../../../assets/img/logo_seleccionado/notificaciones.png"
+              src="../../../assets/img/logo/info.png"
               alt="Perfil"
             ></img>
-            <h3 className="opt_text">Notificaciones </h3>
-          </div>
-          <img
-            className="arrow"
-            src="../../../assets/img/logo_seleccionado/arrow.png"
-            alt=""
-          ></img>
-        </div>
-        <div className="space"></div>
-        <div className="OptContainer">
-          <div className="ProfOptions">
-            <img
-              className="opt_img"
-              src="../../../assets/img/logo/mascota.png"
-              alt="Perfil"
-            ></img>
-            <h3 className="opt_text">Estado de adopción </h3>
+            <h3 className="opt_text">Ayuda </h3>
           </div>
           <img
             className="arrow"
@@ -94,10 +70,10 @@ const ProfilePage = () => {
           <div className="ProfOptions">
             <img
               className="opt_img"
-              src="../../../assets/img/logo_seleccionado/apadrina.png"
+              src="../../../assets/img/logo/config.png"
               alt="Perfil"
             ></img>
-            <h3 className="opt_text">Apadrinar </h3>
+            <h3 className="opt_text">Configuración </h3>
           </div>
           <img
             className="arrow"
@@ -105,14 +81,15 @@ const ProfilePage = () => {
             alt=""
           ></img>
         </div>
+        <div className="spaceG"></div>
         <div className="OptContainer">
           <div className="ProfOptions">
             <img
               className="opt_img"
-              src="../../../assets/img/logo_seleccionado/donar.png"
+              src="../../../assets/img/logo/puerta.png"
               alt="Perfil"
             ></img>
-            <h3 className="opt_text">Donar </h3>
+            <h3 className="opt_text">Cerrar sesión </h3>
           </div>
           <img
             className="arrow"
@@ -126,4 +103,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default MasPage;
