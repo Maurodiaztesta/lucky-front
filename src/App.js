@@ -5,7 +5,9 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import LoginElectionPage from "./pages/LoginElectionPage/LoginElectionPage";
 import HomePage from "./pages/HomePage/HomePage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import AdoptarPage from "./pages/AdoptarPage/AdoptarPage";
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
             <Route path="/login" element={<LoginPage></LoginPage>}/>
             <Route path="/loginElection" element={<LoginElectionPage/>}/>            
+            <Route path="/perfil" element={<ProfilePage/>}/>            
           </Routes>
         </main>
       </Router>
