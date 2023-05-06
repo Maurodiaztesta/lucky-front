@@ -35,4 +35,19 @@
             font-size: 16px;
         }
     }
+    &__main{
+        display: flex;
+        flex-direction: column;
+        &--noticia{
+            background-color: #FA9C93;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            padding: 2px;
+        }
+    }
+
 }
+
+
