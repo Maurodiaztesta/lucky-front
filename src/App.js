@@ -9,6 +9,8 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import AdoptarPage from "./pages/AdoptarPage/AdoptarPage";
 import MasPage from "./pages/MasPage/MasPage";
 import Gallery from "./components/Gallery/Gallery";
+import ResultadosFiltroPage from "./pages/ResultadosFiltroPage/ResultadosFiltroPage";
+import FiltersPage from "./pages/FiltersPage/FiltersPage";
 
 
 
@@ -26,7 +28,10 @@ function App() {
             <Route path="/loginElection" element={<LoginElectionPage/>}/>            
             <Route path="/profile" element={<ProfilePage/>}/>            
             <Route path="/more" element={<MasPage></MasPage>}/>            
-            <Route path="/gallery" element={<Gallery/>}/>            
+            <Route path="/gallery" element={<Gallery/>}/> 
+            <Route path="/filterResults" element={<ResultadosFiltroPage/>}/> 
+            <Route path="/filters" element={<FiltersPage/>}/> 
+
           </Routes>
         </main>
       </Router>
