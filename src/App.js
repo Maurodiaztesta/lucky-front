@@ -11,6 +11,7 @@ import MasPage from "./pages/MasPage/MasPage";
 import Gallery from "./components/Gallery/Gallery";
 import ResultadosFiltroPage from "./pages/ResultadosFiltroPage/ResultadosFiltroPage";
 import FiltersPage from "./pages/FiltersPage/FiltersPage";
+import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 
 
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/gallery" element={<Gallery/>}/> 
             <Route path="/filterResults" element={<ResultadosFiltroPage/>}/> 
             <Route path="/filters" element={<FiltersPage/>}/> 
+            <Route path="/perfilanimal" element={<PerfilAnimalPage></PerfilAnimalPage>}/> 
 
           </Routes>
         </main>
