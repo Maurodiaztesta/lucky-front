@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import "./RegisterPage.scss"
+import "./RegisterPage.css"
 import React from 'react'
 
 const RegisterPage = () => {

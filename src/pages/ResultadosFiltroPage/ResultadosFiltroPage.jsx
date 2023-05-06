@@ -1,6 +1,6 @@
 import Gallery from "../../components/Gallery/Gallery"
 import Searcher from "../../components/Searcher/Searcher"
-import "./ResultadosFiltroPage.scss"
+import "./ResultadosFiltroPage.css"
 
 import React from 'react'
 

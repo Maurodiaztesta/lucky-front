@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import "./LoginPage.scss"
+import "./LoginPage.css"
 import React from 'react'
 
 const LoginPage = () => {

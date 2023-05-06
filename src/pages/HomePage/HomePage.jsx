@@ -1,4 +1,4 @@
-import "./HomePage.scss";
+import "./HomePage.css";
 import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import SwiperHome from "../../components/Swiper/SwiperHome";

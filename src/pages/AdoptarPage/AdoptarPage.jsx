@@ -1,4 +1,4 @@
-import "./AdoptarPage.scss"
+import "./AdoptarPage.css"
 import React from 'react'
 import Searcher from '../../components/Searcher/Searcher'
 import NavBar from "../../components/NavBar/NavBar"
