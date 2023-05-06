@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+    margin-top: 30px;
+   
+  }
+  
+  .container1, .container2, .container3 {
+      width: 274px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 5px rgb(65, 155, 249);
+      display: flex;
+      margin-bottom: 30px;
+      background-color: #B7CDD2;
+      margin-left: 8vh;
+    }
+    
+   
+    .img_container1 img, .img_container2 img, .img_container3 img {
+      max-width: 50%;
+      margin: auto;
+      padding: 10px;
+    }
+    
+   
+    .info_container1, .info_container2, .info_container3 {
+       width: 60%;
+       overflow: hidden;
+     }
+    
+   
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: rgb(65, 155, 249);
+    }
+    
+   
+    p {
+      font-size: 14px;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: rgba(0, 0, 0, 0.657);
+    }
+    
