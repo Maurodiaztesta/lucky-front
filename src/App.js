@@ -7,6 +7,7 @@ import LoginElectionPage from "./pages/LoginElectionPage/LoginElectionPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import AdoptarPage from "./pages/AdoptarPage/AdoptarPage";
+import MasPage from "./pages/MasPage/MasPage";
 
 
 
@@ -22,7 +23,8 @@ function App() {
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
             <Route path="/login" element={<LoginPage></LoginPage>}/>
             <Route path="/loginElection" element={<LoginElectionPage/>}/>            
-            <Route path="/perfil" element={<ProfilePage/>}/>            
+            <Route path="/profile" element={<ProfilePage/>}/>            
+            <Route path="/more" element={<MasPage></MasPage>}/>            
           </Routes>
         </main>
       </Router>
