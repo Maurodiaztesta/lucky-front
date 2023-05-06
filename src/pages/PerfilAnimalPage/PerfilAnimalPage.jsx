@@ -1,5 +1,5 @@
 import axios from "axios";
-import "./PerfilAnimalPage.scss"
+import "./PerfilAnimalPage.css"
 import React, { useEffect, useState } from 'react'
 
 const PerfilAnimalPage = () => {

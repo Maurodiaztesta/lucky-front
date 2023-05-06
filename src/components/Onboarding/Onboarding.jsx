@@ -1,4 +1,4 @@
-import "./Onboarding.scss"; 
+import "./Onboarding.css"; 
 
 import React from 'react'
 

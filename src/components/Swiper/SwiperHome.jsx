@@ -1,6 +1,6 @@
 import React from "react";
 import { SwiperSlide, Swiper } from "swiper/react";
-import "./SwiperHome.scss";
+import "./SwiperHome.css";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";

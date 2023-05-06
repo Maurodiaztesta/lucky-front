@@ -1,5 +1,5 @@
 import NavBar from "../../components/NavBar/NavBar";
-import "./MasPage.scss"
+import "./MasPage.css"
 import React from "react";
 
 const MasPage = () => {
