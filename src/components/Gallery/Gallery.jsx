@@ -1,4 +1,4 @@
-import "./Gallery.css"
+import "./Gallery.scss"
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useEffect } from 'react'
@@ -15,7 +15,7 @@ const Gallery = () => {
   return (
     <div className='contenedorPadre'>
         {animales.map((animal, index) => <div className='contenedorPadre__hijo' key={index}>
-            <img className='contenedorPadre__hijo--img' src={animal.datos.imagen} alt=''></img>
+            <img className='contenedorPadre__hijo--img' src='../../assets/img/imagenes/gato.png' alt=''></img>
             <div className='contenedorPadre__hijo--textos'>
                 <h2 className='contenedorPadre__hijo--textos--nombre'>{animal.datos.nombre}</h2>
                 <div className='contenedorPadre__hijo--textos--textder'>

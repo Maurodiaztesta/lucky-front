@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
-
+import './Form.css'
+import ProgressBar from '../ProgressBar/ProgressBar';
 const Form = () => {
     const [part, setPart] = useState(1);
     const [ data , setData ] = useState({
@@ -58,12 +59,13 @@ const Form = () => {
             
         })
     }
-
     return (
         <form>
             {part === 1 && (
-                <div>
+                <div className='partone'>
                     <h5>Formulario de adopción</h5>
+                    <ProgressBar bgcolor="#FA9C93" progress={30} width={90} height={8}></ProgressBar>
+                    <div className='progress__bar'/>
                     <h3>Tus Datos</h3>
                     <input type='text' {...register("Datos.NombreApellidos")} onChange={onChange} placeholder='Nombre y Apellidos' />
                     <input type='text' {...register("Datos.Email")} onChange={onChange} placeholder='Email' />
@@ -73,7 +75,6 @@ const Form = () => {
                     <input type='text' {...register("Datos.CalleNumeroPiso")} onChange={onChange} placeholder='Calle , número, piso' />
                     <input type='text' {...register("Datos.CodigoPostal")} onChange={onChange}   placeholder='Código Postal' />
                     <input type='text' {...register("Datos.Ciudad")} onChange={onChange} placeholder='Ciudad' />
-
                     <input type='checkbox' value="aceptar" required={true} className='terms'/><label htmlFor='terms'>Acepto los términos y cóndiciones de la adopción</label>
                     <button type='button' onClick={handleContinue}>Continuar</button>
                 </div>
