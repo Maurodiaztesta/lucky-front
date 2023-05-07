@@ -12,6 +12,8 @@ import Gallery from "./components/Gallery/Gallery";
 import ResultadosFiltroPage from "./pages/ResultadosFiltroPage/ResultadosFiltroPage";
 import FiltersPage from "./pages/FiltersPage/FiltersPage";
 import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
+import DonationPage from "./pages/DonationPage/DonationPage";
+import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 
 
 
@@ -33,6 +35,8 @@ function App() {
             <Route path="/filterResults" element={<ResultadosFiltroPage/>}/> 
             <Route path="/filters" element={<FiltersPage/>}/> 
             <Route path="/perfilanimal" element={<PerfilAnimalPage></PerfilAnimalPage>}/> 
+            <Route path="/donation" element={<DonationPage></DonationPage>}/>  
+            <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
           </Routes>
         </main>
       </Router>
