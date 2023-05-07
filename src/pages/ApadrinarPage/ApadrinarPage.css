@@ -1,0 +1,53 @@
+.div__apadrinar {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #dedede;
+  border-radius: 5px;
+}
+.div__apadrinar h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f44336;
+}
+.div__apadrinar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.div__apadrinar form {
+  display: flex;
+  flex-direction: column;
+}
+.div__apadrinar label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.div__apadrinar input[type=text],
+.div__apadrinar input[type=email],
+.div__apadrinar select,
+.div__apadrinar textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 15px;
+}
+.div__apadrinar textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.div__apadrinar button[type=submit] {
+  background-color: #1abc9c;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.div__apadrinar button[type=submit]:hover {
+  background-color: #148f77;
+}/*# sourceMappingURL=ApadrinarPage.css.map */

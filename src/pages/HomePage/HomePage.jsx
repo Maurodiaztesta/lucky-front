@@ -33,7 +33,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      {/* <NavBar></NavBar> */}
+      <NavBar></NavBar>
     </div>
   );
 };

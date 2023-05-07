@@ -1,10 +1,5 @@
-.container{
-    display: flex;
-    margin-top: 30px;
-   
-  }
-  
-  .container1, .container2, .container3 {
+
+    .container1 {
       width: 274px;
       border-radius: 10px;
       box-shadow: 0px 2px 5px rgb(65, 155, 249);
@@ -15,37 +10,42 @@
     }
     
    
-    .img_container1 img, .img_container2 img, .img_container3 img {
-      max-width: 50%;
-      margin: auto;
-      padding: 10px;
+    .img_container img{
+    margin-top:12px ;  
     }
     
    
-    .info_container1, .info_container2, .info_container3 {
-       width: 60%;
+    .info_container {
+       width: 75%;
        overflow: hidden;
      }
     
+     .containerSwiper{
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: rgb(65, 155, 249);
+        text-align: center;
+      }
+      
+     
+      p {
+        font-size: 14px;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: rgba(0, 0, 0, 0.657);
+        text-align: center;
+      }
+
+
+     }
    
-    h3 {
-      font-size: 18px;
-      font-weight: bold;
-      margin-top: 10px;
-      margin-bottom: 5px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: rgb(65, 155, 249);
-    }
     
-   
-    p {
-      font-size: 14px;
-      margin: 0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: rgba(0, 0, 0, 0.657);
-    }
-    
+

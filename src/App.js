@@ -12,6 +12,9 @@ import Gallery from "./components/Gallery/Gallery";
 import ResultadosFiltroPage from "./pages/ResultadosFiltroPage/ResultadosFiltroPage";
 import FiltersPage from "./pages/FiltersPage/FiltersPage";
 import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
+import DonationPage from "./pages/DonationPage/DonationPage";
+import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
+import Form from "./components/Forms/Form"; // BORRAR FORM
 
 
 
@@ -21,7 +24,8 @@ function App() {
     <Router>
         <main>
           <Routes>
-            <Route path="/" element={<SplashPage></SplashPage>}/>
+            {/* <Route path="/" element={<SplashPage></SplashPage>}/> */}
+            {/* DESCOMENTAR HOME*/}
             <Route path="/home" element={<HomePage></HomePage>}/>
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
@@ -33,9 +37,12 @@ function App() {
             <Route path="/filterResults" element={<ResultadosFiltroPage/>}/> 
             <Route path="/filters" element={<FiltersPage/>}/> 
             <Route path="/perfilanimal" element={<PerfilAnimalPage></PerfilAnimalPage>}/> 
+            <Route path="/donation" element={<DonationPage></DonationPage>}/>  
+            <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
           </Routes>
         </main>
       </Router>
+      <Form></Form> {/*BORRAR FORM */}
     </div>
   );
 }
