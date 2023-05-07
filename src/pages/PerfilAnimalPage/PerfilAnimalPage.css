@@ -1,101 +1,148 @@
-.perfil-animal-page {
-    display: flex;
-    flex-wrap:wrap;
-    flex-direction: column;
-    align-items: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  .perfil-animal-page-header {
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .perfil-animal-page-header img {
-    width: 300px;
-    height: 300px;
-    margin-right: 20px;
-    object-fit:contain;
-  }
-.perfil-animal-page-header-buttons {
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: space-between;
-    align-items: center;
-
+.mainPage {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-  .perfil-animal-page-header-buttons button {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    cursor: pointer;
-    background-color: #ddd;
-    color: #333;
-  }
-  
-  .perfil-animal-page-header-buttons button.active {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .perfil-animal-page-body {
-    display: flex;
-    flex-wrap:wrap;
-    width: 100%;
-    display: flex;  
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .perfil-animal-page-body__data-container {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  
-  .perfil-animal-page-body__data-container p {
-    margin: 0;
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .perfil-animal-page-body__data-container p span {
-    font-weight: bold;
-  }
-  
-  .personalidad,
-  .historia {
-    margin-top: 10px;
-    font-size: 16px;
-    font-style: italic;
-  }
-  
-  .personalidad p,
-  .historia p {
-    margin: 0;
-  }
-  
-  button {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    cursor: pointer;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  button:hover {
-    background-color: #555;
-  }
-  
-  
+.mainPage__header {
+  width: 100%;
+}
+.mainPage__menu {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainPage__menu--boton {
+  background-color: white;
+  border: none;
+  font-size: 16px;
+  width: 33%;
+  padding-bottom: 8px;
+}
+.mainPage__menu--botonActive {
+  width: 33%;
+  background-color: white;
+  border: none;
+  font-size: 16px;
+  color: #01748E;
+  border-bottom: 3px solid #FA9C93;
+  padding-bottom: 8px;
+}
+.mainPage__comp {
+  width: 90%;
+  margin: 25px 0px;
+}
+.mainPage__button {
+  margin-top: 32px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.mainPage__button--apa {
+  background-color: white;
+  border: none;
+  border: 2px solid #FA9C93;
+  border-radius: 4px;
+  width: 106px;
+  height: 35px;
+  color: #FA9C93;
+  font-size: 16px;
+}
+.mainPage__button--adop {
+  background-color: #FA9C93;
+  border: none;
+  border-radius: 4px;
+  width: 106px;
+  height: 35px;
+  color: white;
+  font-size: 16px;
+}
+
+.principal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.principal__hijo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+.principal__hijo--linea {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.principal__hijo--linea--clave {
+  font-size: 16px;
+  font-weight: 600;
+}
+.principal__hijo--linea--valor {
+  font-size: 16px;
+  font-weight: 600;
+}
+.principal__personalidad {
+  margin: 32px 0px;
+  width: 100%;
+}
+.principal__personalidad--titulo {
+  margin-bottom: 20px;
+  color: #01748E;
+  font-size: 16px;
+  font-weight: 600;
+}
+.principal__personalidad--dato {
+  background-color: #01748E;
+  font-size: 12px;
+  color: white;
+  padding: 6px;
+  border-radius: 10px;
+  text-align: center;
+}
+.principal__historia {
+  width: 100%;
+  border: 2px solid rgba(1, 116, 142, 0.1921568627);
+  border-radius: 4px;
+}
+.principal__historia--titulo {
+  color: #01748E;
+  font-size: 16px;
+  margin: 7px;
+}
+.principal__historia--datos {
+  font-size: 16px;
+  margin: 7px;
+}
+.principal__info {
+  margin-top: 32px;
+  width: 100%;
+  border: 2px solid rgba(1, 116, 142, 0.1921568627);
+  border-radius: 4px;
+}
+.principal__info--text {
+  margin: 7px;
+}
+.principal__caja {
+  width: 100%;
+  border: 2px solid rgba(1, 116, 142, 0.1921568627);
+  margin: 14px 0px;
+  border-radius: 4px;
+}
+.principal__caja--titulo {
+  margin: 8px 8px 10px;
+  color: #01748E;
+  font-size: 16px;
+}
+.principal__caja--dato {
+  margin: 8px 8px 15px;
+}/*# sourceMappingURL=PerfilAnimalPage.css.map */
