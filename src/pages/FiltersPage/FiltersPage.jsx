@@ -8,9 +8,15 @@ const FiltersPage = () => {
     <div className='DivTittle'><h1 className='Tittle'>Filtros</h1></div>
     <div className='FiltersBackDiv'><img className='filtersbackIMG' src='/assets/img/logo_seleccionado/X.png' alt=''></img></div>
     </div>
-    <div className='CityFilterContainer'><h2 className='CityFilter'>Ciudad</h2></div>
+    <div className='CityFilterContainer'><label className='CityFilter'>Ciudad</label>
+    <div className='City'><select name="color" id="color">
+  <option value="Madrid">Madrid</option>
+  <option value="Barcelona">Barcelona</option>
+  <option value="Valencia">Valencia</option>
+</select></div>
+</div>
 
-    <div className='City'></div>
+    
 
       
     </div>
