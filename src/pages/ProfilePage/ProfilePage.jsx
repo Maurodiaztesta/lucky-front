@@ -5,7 +5,7 @@ import React from "react";
 
 const ProfilePage = () => {
   return (
-    <>
+    <div className="ProfileHolePage">
       <div className="ProfContainer">
         <div className="Img_Center">
           <img
@@ -119,10 +119,13 @@ const ProfilePage = () => {
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
+          
         </div>
+        
       </div>
       <NavBar></NavBar>
-    </>
+    </div>
+    
   );
 };
 
