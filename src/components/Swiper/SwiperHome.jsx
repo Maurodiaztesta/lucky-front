@@ -29,7 +29,7 @@ function SwiperHome() {
         className="swiper_container"
       >
         <SwiperSlide>
-            <Link className="Donar" to="/donation">
+            <Link  className="Donar" to="/donation">
           <div className="container1">
             <div className="img_container">
               <img src="./assets/img/logo/manos_corazon.png" alt="" />
