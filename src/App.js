@@ -14,6 +14,7 @@ import FiltersPage from "./pages/FiltersPage/FiltersPage";
 import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
+import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
 
 
 
@@ -38,6 +39,7 @@ function App() {
             <Route path="/perfilanimal" element={<PerfilAnimalPage></PerfilAnimalPage>}/> 
             <Route path="/donation" element={<DonationPage></DonationPage>}/>  
             <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
+            <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
           </Routes>
         </main>
       </Router>
