@@ -1,3 +1,11 @@
+.NavBar {
+  margin-top: 40px;
+}
+
+.ProfileHolePage {
+  width: 100%;
+}
+
 .ProfContainer {
   display: flex;
   flex-direction: column;
