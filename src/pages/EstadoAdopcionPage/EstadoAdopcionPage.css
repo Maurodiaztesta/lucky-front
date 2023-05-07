@@ -48,4 +48,11 @@
 .padre__hijo--bot--valor {
   list-style: none;
   font-size: 12px;
+}
+.noresultados {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  color: #01748E;
 }/*# sourceMappingURL=EstadoAdopcionPage.css.map */
