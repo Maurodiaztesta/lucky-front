@@ -6,8 +6,9 @@ import { useForm } from "react-hook-form";
 
 const FiltersPage = () => {
 
-  const [protectoras, setPortectoras] = useState([]);
-  const [protectorasF, setPortectorasF] = useState([]);
+  const [protectoras, setProtectoras] = useState([]);
+  const [protectorasF, setProtectorasF] = useState([]);
+  const [enviar, setEnviar] = useState();
 
   const [select, setSelect] = useState("Barcelona");
 
@@ -20,42 +21,70 @@ const FiltersPage = () => {
 
   useEffect(() => {
     axios.get("http://localhost:5000/protectora").then((res) => {
-      setPortectoras(res.data);
+      setProtectoras(res.data);
       // console.log(res.data);
     });
   }, []);
 
 
 
-  useEffect(() => {
-    let protectCopy = [];
-    let protect = [];
-    axios.get("http://localhost:5000/protectora").then((res) => {
-      protect = res.data;
-      // console.log(protect);
-      let protectorasFiltradas = protect.filter(protectora => 
-        protectora.city.toLowerCase().includes(activeButtons.ciudad.toLowerCase())
-      )
-      // console.log(protectorasFiltradas);
+  // useEffect(() => {
+  //   let protectCopy = [];
+  //   let protect = [];
+  //   axios.get("http://localhost:5000/protectora").then((res) => {
+  //     protect = res.data;
+  //     // console.log(protect);
+  //     let protectorasFiltradas = protect.filter(protectora => 
+  //       protectora.city.toLowerCase().includes(activeButtons.ciudad.toLowerCase())
+  //     )
+  //     // console.log(protectorasFiltradas);
       
-      let animalesFiltrados = protectorasFiltradas.map((protectora) => {
-        let animalesFiltrados2 = protectora.animals.filter((animal) => {
-          let especieFiltro = !animal.datos.especie
-            .toLowerCase()
-            .includes(activeButtons.especie.toLowerCase());
-          let sexoFiltro = !animal.datos.sexo
-            .toLowerCase()
-            .includes(activeButtons.sexo.toLowerCase());
-          let tamañoFiltro = !animal.datos.tamaño
-            .toLowerCase()
-            .includes(activeButtons.tamaño.toLowerCase());
-          return especieFiltro && sexoFiltro && tamañoFiltro;
-        });
+  //     let animalesFiltrados = protectorasFiltradas.map((protectora) => {
+  //       let animalesFiltrados2 = protectora.animals.filter((animal) => {
+  //         let especieFiltro = !animal.datos.especie
+  //           .toLowerCase()
+  //           .includes(activeButtons.especie.toLowerCase());
+  //         let sexoFiltro = !animal.datos.sexo
+  //           .toLowerCase()
+  //           .includes(activeButtons.sexo.toLowerCase());
+  //         let tamañoFiltro = !animal.datos.tamaño
+  //           .toLowerCase()
+  //           .includes(activeButtons.tamaño.toLowerCase());
+  //         return especieFiltro && sexoFiltro && tamañoFiltro;
+  //       });
+  //       return { ...protectora, animals: animalesFiltrados2 };
+  //     });
+  //     setProtectorasF(animalesFiltrados);
+  //   });
+  // }, [activeButtons]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/protectora").then((res) => {
+      const protectoras = res.data;
+  
+      const protectorasFiltradas = protectoras.filter((protectora) =>
+        protectora.city.toLowerCase().includes(activeButtons.ciudad.toLowerCase())
+      );
+  
+      const animalesFiltrados = protectorasFiltradas.map((protectora) => {
+        const animalesFiltrados2 = protectora.animals.filter((animal) =>
+          Object.keys(activeButtons).every((prop) => {
+            if (prop === "ciudad") return true; // Ignorar el filtro de ciudad
+            if (prop === "especie" && activeButtons[prop] !== "") {
+              return animal.datos[prop]
+                .toLowerCase()
+                .includes(activeButtons[prop].toLowerCase());
+            }
+            return !activeButtons[prop]; // Ignorar los filtros que no estén seleccionados
+          })
+        );
         return { ...protectora, animals: animalesFiltrados2 };
       });
-      setPortectorasF(animalesFiltrados);
+  
+      setProtectorasF(animalesFiltrados);
     });
   }, [activeButtons]);
+  
   
   console.log(protectorasF);
 
@@ -502,7 +531,7 @@ export default FiltersPage;
   //         protectCopy.push(pro);
   //       }
   //     }
-  //     setPortectorasF(protectCopy);
+  //     setProtectorasF(protectCopy);
   //   });
   // }, [activeButtons]);
 
@@ -544,7 +573,7 @@ export default FiltersPage;
   //         }
   //       }
   //     }
-  //     setPortectorasF(protectCopy);
+  //     setProtectorasF(protectCopy);
   //   });
   // }, []);
   // console.log(protectorasF);
