@@ -39,7 +39,7 @@ const AdoptarPage = () => {
                 </div>
             </div>
         </div>
-        {/* <NavBar></NavBar> */}
+        <NavBar></NavBar>
     </>
   )
 }

@@ -1,6 +1,5 @@
 .APpadre{
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +11,7 @@
         align-items: center;
         flex-direction: column;
         &--mascotas{
+            margin-top: 31px;
             width: 90%;
             display: flex;
             justify-content: center;
@@ -34,6 +34,12 @@
             }
         }
     }
+    &__linea{
+        width: 90%;
+        border-bottom: 2px solid #BDD2D6;
+        margin-top: 10px;
+        margin-bottom: 24px;
+    }
     &__bot{
         width: 100%;
         display: flex;
@@ -48,6 +54,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 37px;
             &--p{
                 margin-left: 10px;
                 font-size: 16px;
@@ -63,6 +70,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                margin-bottom: 30px;
                 &--h2{
                     font-size: 16px;
                     color: #01748E;
