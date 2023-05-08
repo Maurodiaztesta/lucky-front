@@ -26,7 +26,7 @@ function App() {
     <Router>
         <main>
           <Routes>
-            {/* <Route path="/" element={<SplashPage></SplashPage>}/> */}
+            <Route path="/" element={<SplashPage></SplashPage>}/>
             <Route path="/home" element={<HomePage></HomePage>}/>
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
@@ -42,7 +42,6 @@ function App() {
             <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
             <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
           </Routes>
-            <Warning></Warning>
         </main>
       </Router>
     </div>
