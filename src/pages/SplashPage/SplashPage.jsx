@@ -1,18 +1,24 @@
-import "./SplashPage.css"
-import React from 'react'
+import { Link } from "react-router-dom";
+import "./SplashPage.css";
+import React from "react";
 
 const SplashPage = () => {
   return (
-    
-    
-    <a>
-      <div className="padre">
-        <img className="padre__logo" src='/assets/img/logo/lucky_logo.png' alt='logo'></img>
-        <img className="padre__titulo" src='/assets/img/logo/lucky_titulo.png' alt='titulo'></img>
+    <Link to="onboarding">
+      <div className="padreS">
+        <img
+          className="padreS__logo"
+          src="/assets/img/logo/lucky_logo.png"
+          alt="logo"
+        ></img>
+        <img
+          className="padreS__titulo"
+          src="/assets/img/logo/lucky_titulo.png"
+          alt="titulo"
+        ></img>
       </div>
-    </a> 
-    
-  )
-}
+    </Link>
+  );
+};
 
-export default SplashPage
+export default SplashPage;

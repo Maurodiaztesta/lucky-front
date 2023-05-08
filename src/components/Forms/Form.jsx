@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import './Form.css'
 import ProgressBar from '../ProgressBar/ProgressBar';
-import backLogo from '../Forms/back.png';
+
+
 const Form = () => {
     const [part, setPart] = useState(1);
     const [data, setData] = useState({
@@ -89,13 +90,13 @@ const Form = () => {
             {part === 2 && (
                 <div className='partone'>
                     <div className='head'>
-                        <img className='head__img' src={backLogo} onClick={handleBack} alt='logoBack'></img>
+                        <img className='head__img' src="./assets/img/logo/back.png" onClick={handleBack} alt='logoBack'></img>
                         <h4 className='head__title'>Formulario de adopción</h4>
                     </div>
                     <ProgressBar bgcolor="#FA9C93" progress={50} width={90} height={8}></ProgressBar>
                     <h3 className='partone__pets'>Sobre las mascotas</h3>
                     <div className='another'>
-                        <label className='another__animals'>¿Tienes otros animales?</label>
+                        <label  className='another__animals'>¿Tienes otros animales?</label>
                         <div className='another__check' id='a'>
                             <label className='another__txt' htmlFor='y1'>Sí</label>
                             <input className='another__inp' type='radio' id='y1' {...register("Mascota.OtrosAnimales")} onChange={onChange} name="y1" value="true" required />
@@ -106,15 +107,14 @@ const Form = () => {
                         </div>
                     </div>
                     <input className='partone__labels__inp' type='text' {...register("Mascota.CualesAnimales")} onChange={onChange} placeholder='¿Cuáles?' />
-                    <input className='partone__labels__inp' type='text' placeholder='¿Se lleva bien con otros animales?' />
-                    <label htmlFor='da1'>¿Por qué has elegido adoptar?</label>
+                    <input className='partone__labels__inp' type='text' {...register("Mascota.SeLlevaBien")} onChange={onChange} placeholder='¿Se lleva bien con otros animales?' />
+                    <label className='labelinp' htmlFor='da1'>¿Por qué has elegido adoptar?</label>
                     <input className='partone__labels__inp' type='text' name='da1' {...register("Mascota.PorQueAdpotar")} onChange={onChange} />
-                    <input className='partone__labels__inp' type='text' {...register("Mascota.SeLlevaBien")} onChange={onChange} name='da1' />
-                    <label htmlFor='da2'>¿Conoces las necesidades del animal?</label>
+                    <label className='labelinp' htmlFor='da2'>¿Conoces las necesidades del animal?</label>
                     <input className='partone__labels__inp' type='text' {...register("Mascota.NecesidadesAnimal")} onChange={onChange} name='da2' />
-                    <label htmlFor='da3'>¿Conoces sus gastos?</label>
+                    <label className='labelinp' htmlFor='da3'>¿Conoces sus gastos?</label>
                     <input className='partone__labels__inp' type='text' {...register("Mascota.Gastos")} onChange={onChange} name='da3' />
-                    <label htmlFor='da4'>¿Conoces su alimentación?</label>
+                    <label className='labelinp' htmlFor='da4'>¿Conoces su alimentación?</label>
                     <input className='partone__labels__inp' type='text' {...register("Mascota.Alimentacion")} onChange={onChange} name='da4' />
                     <div className='content'>
                         <button type='button' className='content__btn' onClick={handleContinue}>Continuar</button>

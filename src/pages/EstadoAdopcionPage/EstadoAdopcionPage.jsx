@@ -6,7 +6,7 @@ import axios from 'axios';
 const EstadoAdopcionPage = () => {
   const [animales, setAnimales] = useState([]);
   const [search, setSearch] = useState('');
-  const [hayResultados, setHayResultados] = useState(true); 
+  const [showAll, setShowAll] = useState(true);
 
   useEffect(() => {
     axios.get("http://localhost:5000/animales").then(res => {
@@ -15,23 +15,25 @@ const EstadoAdopcionPage = () => {
   }, [])
 
   const handleSearcher = (e) => {
-    setSearch(e.target.value);
+    const inputValue = e.target.value.trim();
+    setSearch(inputValue);
+    setShowAll(inputValue === '');
   };
 
   const animalesFiltrados = animales.filter((animal) => {
-    return animal.datos.especie.toLowerCase().includes(search.toLowerCase());
+    const nombreMatches = animal.datos.nombre.toLowerCase().includes(search.toLowerCase());
+    const especieMatches = animal.datos.especie.toLowerCase().includes(search.toLowerCase());
+    return showAll || nombreMatches || especieMatches;
   });
-
-  useEffect(() => {
-    setHayResultados(animalesFiltrados.length > 0); 
-  }, [animalesFiltrados]);
 
   return (
     <>
       <Searcher search={search} handleSearcher={handleSearcher} />
-      {hayResultados ? (
-        <div className='padre'>
-          {animalesFiltrados.map((animal, index) => (
+      <div className='padre'>
+        {animalesFiltrados.length === 0 ? (
+          <p className="noresultados">No se encontraron resultados</p>
+        ) : (
+          animalesFiltrados.map((animal, index) => (
             <div className='padre__hijo' key={index}>
               <div className='padre__hijo--top'>
                 <h2 className='padre__hijo--top--h2'>Adopción de {animal.datos.nombre}</h2>
@@ -51,11 +53,9 @@ const EstadoAdopcionPage = () => {
                 </ul>
               </div>
             </div>
-          ))}
-        </div>
-      ) : (
-        <p  className='noresultados'>No se han encontrado mascotas.</p>
-      )}
+          ))
+        )}
+      </div>
     </>
   )
 }

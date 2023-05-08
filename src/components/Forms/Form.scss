@@ -100,6 +100,8 @@
   &__animals {
     color: #010101bd;
     font-size: medium;
+    margin-left: 18px;
+    width: 65%;
   }
   &__check{
     display: flex;
@@ -118,7 +120,7 @@
     width: 10%;
 }
 #b{
-    margin-right: 15px;
+  width: 15%;
 }
 $radio-size: 21.5px;
 $radio-color: #fa9c93;
@@ -160,4 +162,10 @@ input[type="radio"] {
   &:focus:before {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   }
+}
+.labelinp{
+  color: #010101bd;
+  font-size:medium ;
+  margin-left: 1rem;
+  margin-top: 10px;
 }

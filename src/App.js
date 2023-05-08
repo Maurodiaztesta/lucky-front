@@ -15,7 +15,9 @@ import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
-import Warning from "./components/Warning/Warning";
+import MapPage from "./pages/MapPage/MapPage";
+import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
+import NotificationPage from "./pages/NotificationPage/NotificationPage";
 
 
 
@@ -42,9 +44,12 @@ function App() {
             <Route path="/donation" element={<DonationPage></DonationPage>}/>  
             <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
             <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
+            <Route path="/map" element={<MapPage></MapPage>}/>  
+            <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
+            <Route path="/notification" element={<NotificationPage></NotificationPage>}/>
           </Routes>
         </main>
-      </Router>
+      </Router> 
     </div>
   );
 }
