@@ -96,11 +96,11 @@ const Form = () => {
                     <h3 className='partone__pets'>Sobre las mascotas</h3>
                     <div className='another'>
                         <label className='another__animals'>¿Tienes otros animales?</label>
-                        <div className='another__check'>
+                        <div className='another__check' id='a'>
                             <label className='another__txt' htmlFor='y1'>Sí</label>
                             <input className='another__inp' type='radio' id='y1' {...register("Mascota.OtrosAnimales")} onChange={onChange} name="y1" value="true" required />
                         </div>
-                        <div className='another__check'>
+                        <div className='another__check' id='b'>
                             <label className='another__txtn' htmlFor='n1'>No</label>
                             <input className='another__inp' id='n1' type='radio'{...register("Mascota.OtrosAnimales")} onChange={onchange} name='y1' value="false" required />
                         </div>

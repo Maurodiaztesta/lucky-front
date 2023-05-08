@@ -14,7 +14,8 @@ import FiltersPage from "./pages/FiltersPage/FiltersPage";
 import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
-import Form from "./components/Forms/Form";
+import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
+
 
 
 
@@ -24,7 +25,7 @@ function App() {
     <Router>
         <main>
           <Routes>
-            {/* <Route path="/" element={<SplashPage></SplashPage>}/> */}
+            <Route path="/" element={<SplashPage></SplashPage>}/>
             <Route path="/home" element={<HomePage></HomePage>}/>
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
@@ -38,10 +39,10 @@ function App() {
             <Route path="/perfilanimal" element={<PerfilAnimalPage></PerfilAnimalPage>}/> 
             <Route path="/donation" element={<DonationPage></DonationPage>}/>  
             <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
+            <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
           </Routes>
         </main>
       </Router>
-      <Form></Form>
     </div>
   );
 }
