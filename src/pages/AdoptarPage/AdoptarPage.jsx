@@ -74,6 +74,7 @@ const AdoptarPage = () => {
             )}
           </div>
         </div>
+        <NavBar></NavBar>
       </div>
     </>
   );
