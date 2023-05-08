@@ -18,6 +18,7 @@ import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
 import MapPage from "./pages/MapPage/MapPage";
 import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
+import Warning from "./components/Warning/Warning"
 
 
 
@@ -47,6 +48,7 @@ function App() {
             <Route path="/map" element={<MapPage></MapPage>}/>  
             <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
             <Route path="/notification" element={<NotificationPage></NotificationPage>}/>
+            <Route path="/warning" element={<Warning></Warning>}/>
           </Routes>
         </main>
       </Router> 

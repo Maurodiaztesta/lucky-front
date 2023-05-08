@@ -29,44 +29,44 @@ function SwiperHome() {
         className="swiper_container"
       >
         <SwiperSlide>
-            <Link  className="Donar" to="/donation">
-          <div className="container1">
-            <div className="img_container">
-              <img src="./assets/img/logo/manos_corazon.png" alt="" />
+          <Link className="donar" to="/donation">
+            <div className="donar__container">
+              <img
+                className="donar__container--img"
+                src="./assets/img/logo/manos_corazon.png"
+                alt=""
+              />
+              <div className="donar__container--text">
+                <h3 className="donar__container--text--h3">Donar</h3>
+                <p className="donar__container--text--p">
+                  Donaciones para a los animales
+                </p>
+              </div>
             </div>
-            <div className="info_container">
-              <h3>Donar</h3>
-              <p>Donaciones para a los animales</p>
-            </div>
-          </div>
-              </Link>
-        </SwiperSlide>
-
-        <SwiperSlide>
-        <Link  className="Status" to="/status">
-          <div className="container1">
-            <div className="img_container">
-              <img src="./assets/img/logo/mascota.png" alt="" />
-            </div>
-            <div className="info_container">
-              <h3>Estado de la adopción</h3>
-              <p>Revisa el proceso de tus adopciones en curso</p>
-            </div>
-          </div>
           </Link>
         </SwiperSlide>
 
         <SwiperSlide>
-        <Link className="Apadrinar" to="/Apadrinar">
-          <div className="container1">
-            <div className="img_container">
-              <img src="./assets/img/logo/mano_casa.png" alt="" />
+          <Link className="donar" to="/status">
+            <div className="donar__container">
+                <img className="donar__container--img" src="./assets/img/logo/mascota.png" alt="" />
+              <div className="donar__container--text">
+                <h3 className="donar__container--text--h3">Estado de la adopción</h3>
+                <p className="donar__container--text--p">Revisa el proceso de tus adopciones en curso</p>
+              </div>
             </div>
-            <div className="info_container">
-              <h3>Apadrinar</h3>
-              <p>Apadrina un animal</p>
+          </Link>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <Link className="donar" to="/Apadrinar">
+            <div className="donar__container">
+                <img className="donar__container--img" src="./assets/img/logo/mano_casa.png" alt="" />
+              <div className="donar__container--text2">
+                <h3 className="donar__container--text--h3">Apadrinar</h3>
+                <p className="donar__container--text--p">Apadrina un animal</p>
+              </div>
             </div>
-          </div>
           </Link>
         </SwiperSlide>
 
