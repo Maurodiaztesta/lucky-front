@@ -11,9 +11,11 @@ const ResultadosFiltroPage = () => {
 
   return (
     <div className="Container">
-    <div className="SearcherDiv"><img onClick={ () => navigate('/filters')} className="back" src="../../assets/img/logo/back.png" alt="back"></img></div>
-      <Searcher></Searcher>
-        <Gallery></Gallery>
+    <div className="SearcherDiv"><img onClick={ () => navigate('/filters')} className="back" src="../../assets/img/logo/back.png" alt="back"></img>
+    <Searcher></Searcher>
+    </div>
+      
+        {/* <Gallery></Gallery> */}
     </div>
   )
 }
