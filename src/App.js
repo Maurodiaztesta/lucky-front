@@ -15,13 +15,12 @@ import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
+import Warning from "./components/Warning/Warning";
+import AdoptStateFilter from "./components/AdoptStateFilter/AdoptStateFilter";
 import MapPage from "./pages/MapPage/MapPage";
 import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
-
 // BORRAR
-import Warning from "./components/Warning/Warning"
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
-
 
 
 
