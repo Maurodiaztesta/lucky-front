@@ -5,18 +5,16 @@ const ApadrinarPage = () => {
   return (
     <div className='div__apadrinar'>
     <div>
-      <h1 className='title-apadrinar'>Apadrina un animal</h1>
+      <h1 className='title_apadrinar'>Apadrina un animal</h1>
       </div>
       <section>
-  <h2 className='subtitle-apadrinar'>Formulario de apadrinamiento</h2>
-  <form className='form-apadrinar' action="#" method="POST">
-    <label className='label-apadrinar' for="nombre">Nombre:</label>
+  <h2 className='subtitle_apadrinar'>Formulario de apadrinamiento</h2>
+  <form className='form_apadrinar' action="#" method="POST">
+    <label className='label_apadrinar' for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required></input>
-
-    <label className='label-apadrinar' for="email">Correo electrónico:</label>
+    <label className='label_apadrinar' for="email">Correo electrónico:</label>
     <input type="email" id="email" name="email" required></input>
-
-    <label className='label-apadrinar' for="animal">Animal a apadrinar:</label>
+    <label className='label_apadrinar' for="animal">Animal a apadrinar:</label>
     <select id="animal" name="animal" required>
       <option value="">Selecciona una opción</option>
       <option value="perro">Perro</option>
@@ -24,14 +22,11 @@ const ApadrinarPage = () => {
       <option value="conejo">Conejo</option>
       <option value="otros">Otros</option>
     </select>
-
-    <label className='label-apadrinar' for="mensaje">Mensaje:</label>
-    <textarea className='text-apadrinar' id="mensaje" name="mensaje"></textarea>
-
-    <button className='button-apadrinar' type="submit">Enviar</button>
+    <label className='label_apadrinar' for="mensaje">Mensaje:</label>
+    <textarea className='textarea_apadrinar' id="mensaje" name="mensaje"></textarea>
+    <button className='btn_apadrinar' type="submit">Enviar</button>
   </form>
 </section>
-
     </div>
   )
 }
