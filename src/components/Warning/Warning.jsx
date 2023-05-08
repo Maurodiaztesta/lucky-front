@@ -19,8 +19,8 @@ const Warning = (props) => {
             <img src="./assets/img/imagenes/chica_video.png" alt="" />
             <h4 className="subtitle-warning">¿Quieres continuar con el proceso de adopción?</h4>
             <div className="button-warning-padre">
-              <button className=".warning-btn" onClick={props.onClose}>Cerrar</button>
-              <button className=".warning-btn" onClick={props.onContinue}>Continuar</button>
+              <button className="warning-btn" onClick={props.onClose}>Cancelar</button>
+              <button className="warning-btn" onClick={props.onContinue}>Continuar</button>
             </div>
           </div>
         </div>

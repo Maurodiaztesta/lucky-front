@@ -1,7 +1,7 @@
 .div__donation {
   margin-top: 50px;
 
-form {
+.form-donation {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -9,7 +9,7 @@ form {
     border-radius: 5px;
   }
   
-  label {
+  .label-donation {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
@@ -39,7 +39,7 @@ form {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   }
   
-  textarea {
+  .text-donation {
     height: 100px;
   }
   
@@ -57,7 +57,7 @@ form {
   
  
   
-  h1 {
+  .title-donation {
     text-align: center;
     margin-bottom: 30px;
     color: #f44336;

@@ -1,14 +1,14 @@
 .div__donation {
   margin-top: 50px;
 }
-.div__donation form {
+.div__donation .form-donation {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   background-color: #e3e0e0;
   border-radius: 5px;
 }
-.div__donation label {
+.div__donation .label-donation {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
@@ -35,7 +35,7 @@
   background-color: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-.div__donation textarea {
+.div__donation .text-donation {
   height: 100px;
 }
 .div__donation input[type=submit] {
@@ -49,7 +49,7 @@
   font-size: 16px;
   cursor: pointer;
 }
-.div__donation h1 {
+.div__donation .title-donation {
   text-align: center;
   margin-bottom: 30px;
   color: #f44336;
