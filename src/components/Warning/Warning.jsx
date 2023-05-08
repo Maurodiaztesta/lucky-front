@@ -1,5 +1,6 @@
 import React from "react";
 import "./Warning.css";
+import { Link } from "react-router-dom";
 
 const Warning = (props) => {
   return (
@@ -19,12 +20,16 @@ const Warning = (props) => {
           ¿Quieres continuar con el proceso de adopción?
         </h4>
         <div className="padreW__hijo--botones">
+          <Link to="/perfilanimal">
           <button className="padreW__hijo--botones--1">
             Cancelar
           </button>
+          </Link>
+          <Link to="/">
           <button className="padreW__hijo--botones--2">
             Continuar
           </button>
+          </Link>
         </div>
       </div>
     </div>
