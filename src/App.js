@@ -15,7 +15,6 @@ import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
-import Warning from "./components/Warning/Warning";
 import MapPage from "./pages/MapPage/MapPage";
 
 
@@ -46,7 +45,7 @@ function App() {
             <Route path="/map" element={<MapPage></MapPage>}/>  
           </Routes>
         </main>
-      </Router>
+      </Router> 
     </div>
   );
 }

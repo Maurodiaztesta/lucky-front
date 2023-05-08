@@ -102,6 +102,8 @@
 .another__animals {
   color: rgba(1, 1, 1, 0.7411764706);
   font-size: medium;
+  margin-left: 18px;
+  width: 65%;
 }
 .another__check {
   display: flex;
@@ -119,7 +121,7 @@
 }
 
 #b {
-  margin-right: 15px;
+  width: 15%;
 }
 
 input[type=radio] {
@@ -158,4 +160,11 @@ input[type=radio]:checked:before {
 }
 input[type=radio]:focus:before {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.labelinp {
+  color: rgba(1, 1, 1, 0.7411764706);
+  font-size: medium;
+  margin-left: 1rem;
+  margin-top: 10px;
 }/*# sourceMappingURL=Form.css.map */
