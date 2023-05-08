@@ -6,6 +6,8 @@
 }
 .mainPage__header {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .mainPage__menu {
   margin-top: 30px;

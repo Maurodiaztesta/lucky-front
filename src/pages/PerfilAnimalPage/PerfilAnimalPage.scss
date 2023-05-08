@@ -5,6 +5,8 @@
     flex-direction: column;
     &__header{
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
     &__menu{
         margin-top: 30px;
