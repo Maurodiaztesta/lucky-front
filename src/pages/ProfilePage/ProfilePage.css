@@ -1,31 +1,26 @@
-.NavBar {
-  margin-top: 40px;
-}
-
 .ProfileHolePage {
   width: 100%;
 }
-
-.ProfContainer {
+.ProfileHolePage .NavBar {
+  margin-top: 40px;
+}
+.ProfileHolePage .ProfContainer {
   display: flex;
   flex-direction: column;
   margin-top: 73px;
   align-items: center;
   gap: 16px;
 }
-
-.Img_Center {
+.ProfileHolePage .Img_Center {
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
 }
-
-.ImageProf {
+.ProfileHolePage .ImageProf {
   width: 71px;
   height: 71px;
 }
-
-.ProfOptions {
+.ProfileHolePage .ProfOptions {
   margin-left: 10px;
   align-content: center;
   border-radius: 1px;
@@ -35,35 +30,60 @@
   height: 50px;
   align-items: center;
 }
-
-.opt_img {
+.ProfileHolePage .opt_img {
   height: 24px;
   width: 24px;
   margin-right: 9px;
 }
-
-.opt_text {
+.ProfileHolePage .opt_text {
   color: rgb(1, 116, 142);
   size: 16px;
   letter-spacing: normal;
 }
-
-.space {
+.ProfileHolePage .space {
   height: 10px;
 }
-
-.OptContainer {
+.ProfileHolePage .OptContainer {
   width: 90%;
   display: flex;
   align-items: center;
   border: 1px solid rgb(189, 210, 214);
   border-radius: 4px;
 }
-
-.arrow {
+.ProfileHolePage .arrow {
   width: 8px;
   height: 14px;
   align-items: end;
   display: flex;
   margin-right: 10px;
+  margin-left: 120px;
+}
+.ProfileHolePage .arrow1 {
+  width: 8px;
+  height: 14px;
+  align-items: end;
+  display: flex;
+  margin-right: 10px;
+  margin-left: 80px;
+}
+.ProfileHolePage .arrow2 {
+  width: 8px;
+  height: 14px;
+  align-items: end;
+  display: flex;
+  margin-right: 10px;
+  margin-left: 190px;
+  justify-content: end;
+}
+.ProfileHolePage .arrow3 {
+  width: 8px;
+  height: 14px;
+  align-items: end;
+  display: flex;
+  margin-right: 10px;
+  margin-left: 223px;
+  justify-content: end;
+}
+.ProfileHolePage a {
+  text-decoration: none;
 }/*# sourceMappingURL=ProfilePage.css.map */

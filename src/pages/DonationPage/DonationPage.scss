@@ -1,7 +1,7 @@
 .div__donation {
   margin-top: 50px;
 
-form {
+.form_donation {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -9,7 +9,7 @@ form {
     border-radius: 5px;
   }
   
-  label {
+  .label_donation {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
@@ -19,7 +19,7 @@ form {
   input[type="email"],
   input[type="tel"],
   input[type="number"],
-  textarea {
+  .textarea_donation {
     width: 80%;
     padding: 10px;
     margin-bottom: 15px;
@@ -29,7 +29,7 @@ form {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   }
   
-  select {
+  .select_donation {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -39,7 +39,7 @@ form {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   }
   
-  textarea {
+  .textarea_donation {
     height: 100px;
   }
   
@@ -57,7 +57,7 @@ form {
   
  
   
-  h1 {
+  .title_donation {
     text-align: center;
     margin-bottom: 30px;
     color: #f44336;

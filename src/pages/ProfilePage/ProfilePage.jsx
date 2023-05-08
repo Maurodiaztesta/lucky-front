@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import "./ProfilePage.css";
 
@@ -76,6 +77,7 @@ const ProfilePage = () => {
         </div>
         <div className="space"></div>
         <div className="OptContainer">
+        <Link className="Status" to="/status">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -83,14 +85,16 @@ const ProfilePage = () => {
               alt="Perfil"
             ></img>
             <h3 className="opt_text">Estado de adopción </h3>
-          </div>
           <img
             className="arrow"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
+          </div>
+          </Link>
         </div>
         <div className="OptContainer">
+          <Link className="Apadrinar" to="/Apadrinar">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -98,14 +102,16 @@ const ProfilePage = () => {
               alt="Perfil"
             ></img>
             <h3 className="opt_text">Apadrinar </h3>
-          </div>
           <img
-            className="arrow"
+            className="arrow2"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
+          </div>
+          </Link>
         </div>
         <div className="OptContainer">
+        <Link className="Donar" to="/donation">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -113,13 +119,13 @@ const ProfilePage = () => {
               alt="Perfil"
             ></img>
             <h3 className="opt_text">Donar </h3>
-          </div>
           <img
-            className="arrow"
+            className="arrow3"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
-          
+          </div>
+          </Link>
         </div>
         
       </div>
