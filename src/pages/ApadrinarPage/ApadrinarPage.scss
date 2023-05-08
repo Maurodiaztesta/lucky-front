@@ -1,8 +1,8 @@
 .div__apadrinar {
-    max-width: 600px;
+    height: 100%;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #dedede;
+    padding: 45px;
+    background-color: #e3e2e2;
     border-radius: 5px;
   
   
@@ -12,12 +12,13 @@
     text-align: center;
     margin-bottom: 20px;
     color: #f44336;
+    
   }
   
 
   .subtitle_apadrinar {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
 
@@ -49,7 +50,7 @@
     min-height: 100px;
   }
   
-  .button-apadrinar[type="submit"] {
+  .btn_apadrinar[type="submit"] {
     background-color: #1abc9c;
     color: #fff;
     font-size: 1rem;
