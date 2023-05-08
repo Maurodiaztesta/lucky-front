@@ -13,7 +13,6 @@ function LoginElectionPage() {
         <Link to="/login">
           <button>Usuario</button>
         </Link>
-        
         <button>Asociación protectora</button>
         <Link to="/home">Registrarse en otro momento</Link>
       </div>
