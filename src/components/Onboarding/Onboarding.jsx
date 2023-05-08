@@ -1,6 +1,6 @@
 import "./Onboarding.css"; 
-
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const Onboarding = () => {
   return (
@@ -12,6 +12,7 @@ const Onboarding = () => {
         class="carousel__slide">
       <div class="carousel__snapper">
         <div>
+            <Link className="close" to="/login">x</Link>
             <img src="../../assets/img/imagenes/chica_perro.png" alt=""></img>
             <p>Encuentra todo tipo 
             de servicios que tienes 
@@ -24,6 +25,7 @@ const Onboarding = () => {
         class="carousel__slide">
       <div class="carousel__snapper">
       <div>
+            <Link className="close" to="/login">x</Link>
             <img src="../../assets/img/imagenes/chica_pecera.png" alt=""></img>
             <p>Adopta desde tu móvil</p>
             <span>Puedes acceder al perfil de muchos animales 
@@ -37,6 +39,7 @@ const Onboarding = () => {
         class="carousel__slide">
       <div class="carousel__snapper">
       <div>
+            <Link className="close" to="/login">x</Link>
             <img src="../../assets/img/imagenes/chico_gato.png" alt=""></img>
             <p>Si eres una asociación 
             sube a tus peludos para 

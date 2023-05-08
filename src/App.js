@@ -18,13 +18,14 @@ import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
 
 
 
+
 function App() {
   return (
     <div>
     <Router>
         <main>
           <Routes>
-            {/* <Route path="/" element={<SplashPage></SplashPage>}/> */}
+            <Route path="/" element={<SplashPage></SplashPage>}/>
             <Route path="/home" element={<HomePage></HomePage>}/>
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
