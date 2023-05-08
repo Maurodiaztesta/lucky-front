@@ -63,6 +63,7 @@ const ProfilePage = () => {
           ></img>
         </div>
         <div className="OptContainer">
+        <Link className="notification" to="/notification">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -70,12 +71,13 @@ const ProfilePage = () => {
               alt="Perfil"
             ></img>
             <h3 className="opt_text">Notificaciones </h3>
-          </div>
           <img
-            className="arrow"
+            className="arrow_notification"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
+          </div>
+          </Link>
         </div>
         <div className="space"></div>
         <div className="OptContainer">
@@ -105,7 +107,7 @@ const ProfilePage = () => {
             ></img>
             <h3 className="opt_text">Apadrinar </h3>
           <img
-            className="arrow6"
+            className="arrow_apadrinar"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
@@ -122,7 +124,7 @@ const ProfilePage = () => {
             ></img>
             <h3 className="opt_text">Donar </h3>
           <img
-            className="arrow3"
+            className="arrow_donation"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>

@@ -80,7 +80,7 @@
     margin-right: 10px;
     margin-left: 80px;
 }
-.arrow6{
+.arrow_apadrinar{
     width: 8px;
     height: 14px;
     align-items: end;
@@ -90,13 +90,23 @@
     justify-content: end;
 }
 
-.arrow3{
+.arrow_donation{
     width: 8px;
     height: 14px;
     align-items: end;
     display: flex;
     margin-right: 10px;
     margin-left: 223px;
+    justify-content: end;
+
+}
+.arrow_notification{
+    width: 8px;
+    height: 14px;
+    align-items: end;
+    display: flex;
+    margin-right: 10px;
+    margin-left: 163px;
     justify-content: end;
 
 }

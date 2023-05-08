@@ -74,7 +74,7 @@
   margin-right: 10px;
   margin-left: 80px;
 }
-.ProfileHolePage .arrow6 {
+.ProfileHolePage .arrow_apadrinar {
   width: 8px;
   height: 14px;
   align-items: end;
@@ -83,13 +83,22 @@
   margin-left: 190px;
   justify-content: end;
 }
-.ProfileHolePage .arrow3 {
+.ProfileHolePage .arrow_donation {
   width: 8px;
   height: 14px;
   align-items: end;
   display: flex;
   margin-right: 10px;
   margin-left: 223px;
+  justify-content: end;
+}
+.ProfileHolePage .arrow_notification {
+  width: 8px;
+  height: 14px;
+  align-items: end;
+  display: flex;
+  margin-right: 10px;
+  margin-left: 163px;
   justify-content: end;
 }
 .ProfileHolePage a {
