@@ -8,7 +8,7 @@ const ApadrinarPage = () => {
       <h1 className='title_apadrinar'>Apadrina un animal</h1>
       </div>
       <section>
-  <h2 className='subtitle_apadrinar'>Formulario de apadrinamiento</h2>
+  <h2 className='subtitle_apadrinar'>Formulario:</h2>
   <form className='form_apadrinar' action="#" method="POST">
     <label className='label_apadrinar' for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required></input>
