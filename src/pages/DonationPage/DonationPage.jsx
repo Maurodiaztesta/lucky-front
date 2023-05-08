@@ -6,6 +6,7 @@ const DonationPage = () => {
     
     <div className='div__donation'>
     
+
 	<h1 className='title_donation'>Donacion al refugio animales</h1>
 	
     <form className='form_donation' action="procesar_donacion.php" method="POST">
@@ -28,6 +29,7 @@ const DonationPage = () => {
 			<option value="transferencia">Transferencia bancaria</option>
 		</select>
 		
+
 		<label className='label_donation' for="comentario">Comentario:</label>
 		<textarea className='textarea_donation' id="comentario" name="comentario" rows="4" cols="50"></textarea>
 		

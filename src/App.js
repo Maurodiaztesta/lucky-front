@@ -15,6 +15,7 @@ import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
+import MapPage from "./pages/MapPage/MapPage";
 
 
 
@@ -42,9 +43,10 @@ function App() {
             <Route path="/donation" element={<DonationPage></DonationPage>}/>  
             <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
             <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
+            <Route path="/map" element={<MapPage></MapPage>}/>  
           </Routes>
         </main>
-      </Router>
+      </Router> 
     </div>
   );
 }

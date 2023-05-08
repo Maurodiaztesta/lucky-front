@@ -5,7 +5,8 @@ import React from "react";
 const MasPage = () => {
   return (
     <>
-      <div className="ProfContainer">
+    <div className="mainMas">
+      <div className="ProfContainer2">
         <div className="OptContainer">
           <div className="ProfOptions">
             <img
@@ -98,7 +99,8 @@ const MasPage = () => {
           ></img>
         </div>
       </div>
-      <NavBar></NavBar>
+    </div>
+    <NavBar></NavBar>
     </>
   );
 };

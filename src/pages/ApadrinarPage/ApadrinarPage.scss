@@ -6,6 +6,7 @@
     border-radius: 5px;
   
   
+
   .title_apadrinar {
     font-size: 2.5rem;
     text-align: center;
@@ -13,16 +14,19 @@
     color: #f44336;
   }
   
+
   .subtitle_apadrinar {
     font-size: 1.5rem;
     margin-bottom: 10px;
   }
   
+
   .form_apadrinar {
     display: flex;
     flex-direction: column;
   }
   
+
   .label_apadrinar {
     font-size: 1rem;
     font-weight: bold;
@@ -32,6 +36,7 @@
   input[type="text"],
   input[type="email"],
   select,
+
   .textarea_apadrinar {
     padding: 10px;
     border-radius: 5px;
@@ -44,7 +49,7 @@
     min-height: 100px;
   }
   
-  button[type="submit"] {
+  .button-apadrinar[type="submit"] {
     background-color: #1abc9c;
     color: #fff;
     font-size: 1rem;
@@ -56,6 +61,7 @@
     transition: all 0.3s ease;
   }
   
+
   .btn_apadrinar[type="submit"]:hover {
     background-color: #148f77;
   }
