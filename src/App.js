@@ -17,7 +17,6 @@ import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
 import MapPage from "./pages/MapPage/MapPage";
 import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
-// BORRAR
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
 
 
