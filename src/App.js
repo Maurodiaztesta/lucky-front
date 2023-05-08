@@ -15,8 +15,6 @@ import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
-import Warning from "./components/Warning/Warning";
-
 
 
 
@@ -42,9 +40,8 @@ function App() {
             <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
             <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
           </Routes>
-            <Warning></Warning>
         </main>
-      </Router>
+      </Router> 
     </div>
   );
 }
