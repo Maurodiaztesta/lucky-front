@@ -117,7 +117,7 @@ ol, li {
   font-size: 2em;
 }
 
-.carousel__snapper {
+.carousel__snapper{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,7 +126,6 @@ ol, li {
   width: 100%;
   height: 100%;
   scroll-snap-align: center;
-  color: rgb(1, 116, 142);
   background-color:rgba(255, 255, 255);
 }
 
@@ -144,6 +143,7 @@ ol, li {
 }
 
 .carousel__snapper p{
+  color: rgb(1, 116, 142);
   padding: 10%;
 }
 .carousel__snapper img{
@@ -209,8 +209,6 @@ ol, li {
   transition: transform 0.1s;
 }
 
-
-
 .carousel__prev,
 .carousel__next {
   position: absolute;
@@ -228,22 +226,9 @@ ol, li {
   left: -1rem;
 }
 
-// .carousel::after,
-// .carousel__next {
-//   right: -1rem;
-// }
-
-// .carousel::before,
-// .carousel::after {
-//   content: '';
-//   z-index: 1;
-//   background-color: #333;
-//   background-size: 1.5rem 1.5rem;
-//   background-repeat: no-repeat;
-//   background-position: center center;
-//   color: #fff;
-//   font-size: 2.5rem;
-//   line-height: 4rem;
-//   text-align: center;
-//   pointer-events: none;
-// }
+.close{
+  position: absolute;
+  top:0;
+  right:0;
+  color: grey;
+}
