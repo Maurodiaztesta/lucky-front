@@ -9,7 +9,7 @@ const FiltersPage = () => {
   const [protectoras, setPortectoras] = useState([]);
   const [protectorasF, setPortectorasF] = useState([]);
 
-  const [select, setSelect] = useState("Madrid");
+  const [select, setSelect] = useState("Barcelona");
 
   const [activeButtons, setActiveButtons] = useState({
     especie: null,
@@ -25,24 +25,39 @@ const FiltersPage = () => {
     });
   }, []);
 
+
+
   useEffect(() => {
     let protectCopy = [];
-    let info = [];
+    let protect = [];
     axios.get("http://localhost:5000/protectora").then((res) => {
-      info = res.data;
-      console.log(info);
-      for (const pro of info) {
-        if (
-          pro.city
+      protect = res.data;
+      // console.log(protect);
+      let protectorasFiltradas = protect.filter(protectora => 
+        protectora.city.toLowerCase().includes(activeButtons.ciudad.toLowerCase())
+      )
+      // console.log(protectorasFiltradas);
+      
+      let animalesFiltrados = protectorasFiltradas.map((protectora) => {
+        let animalesFiltrados2 = protectora.animals.filter((animal) => {
+          let especieFiltro = !animal.datos.especie
             .toLowerCase()
-            .includes(activeButtons.ciudad.toLocaleLowerCase())
-        ) {
-          protectCopy.push(pro);
-        }
-      }
-      setPortectorasF(protectCopy);
+            .includes(activeButtons.especie.toLowerCase());
+          let sexoFiltro = !animal.datos.sexo
+            .toLowerCase()
+            .includes(activeButtons.sexo.toLowerCase());
+          let tamañoFiltro = !animal.datos.tamaño
+            .toLowerCase()
+            .includes(activeButtons.tamaño.toLowerCase());
+          return especieFiltro && sexoFiltro && tamañoFiltro;
+        });
+        return { ...protectora, animals: animalesFiltrados2 };
+      });
+      setPortectorasF(animalesFiltrados);
     });
   }, [activeButtons]);
+  
+  console.log(protectorasF);
 
   const {
     register,
@@ -451,21 +466,85 @@ const FiltersPage = () => {
             </button>
           </div>
         </div>
-        <button onClick={aplicar} className="main__body--aplicar">
+        <button type="submit" onClick={aplicar} className="main__body--aplicar">
           Aplicar
         </button>
       </div>
       <div>
-        {protectorasF.map((protectora, index) => (
+        {/* {protectorasF.map((protectora, index) => (
           <div key={index}>
             <p>{protectora.name}</p>
             <p>{protectora.city}</p>
             <img src={protectora.image}></img>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
 };
 
 export default FiltersPage;
+
+
+
+  // useEffect(() => {
+  //   let protectCopy = [];
+  //   let info = [];
+  //   axios.get("http://localhost:5000/protectora").then((res) => {
+  //     info = res.data;
+  //     console.log(info);
+  //     for (const pro of info) {
+  //       if (
+  //         pro.city
+  //           .toLowerCase()
+  //           .includes(activeButtons.ciudad.toLocaleLowerCase())
+  //       ) {
+  //         protectCopy.push(pro);
+  //       }
+  //     }
+  //     setPortectorasF(protectCopy);
+  //   });
+  // }, [activeButtons]);
+
+
+
+
+  // useEffect(() => {
+  //   let protectCopy = [];
+  //   let protect = [];
+  //   axios.get("http://localhost:5000/protectora").then((res) => {
+  //     protect = res.data;
+  //     // console.log(protect);
+  //     for (const protectora of protect) {
+  //       if (
+  //         protectora.city
+  //           .toLowerCase()
+  //           .includes(activeButtons.ciudad.toLocaleLowerCase())
+  //       ) {
+  //         protectCopy.push(protectora);
+  //       }
+  //       for (const animal of protectora.animals) {
+  //         console.log(animal);
+  //         if (
+  //           animal.datos.especie
+  //             .toLowerCase()
+  //             .includes(activeButtons.especie.toLocaleLowerCase())
+  //         ) {
+  //           protectCopy.push(animal);
+  //         } else if (
+  //           animal.datos.sexo
+  //           .toLowerCase()
+  //           .includes(activeButtons.sexo.toLocaleLowerCase())) {
+  //             protectCopy.push(animal);
+  //         } else if (
+  //           animal.datos.tamaño
+  //           .toLowerCase()
+  //           .includes(activeButtons.tamaño.toLocaleLowerCase())) {
+  //           protectCopy.push(animal);
+  //         }
+  //       }
+  //     }
+  //     setPortectorasF(protectCopy);
+  //   });
+  // }, []);
+  // console.log(protectorasF);
