@@ -31,6 +31,7 @@ const ProfilePage = () => {
           ></img>
         </div>
         <div className="OptContainer">
+          <Link className="map" to="/map">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -38,12 +39,13 @@ const ProfilePage = () => {
               alt="Perfil"
             ></img>
             <h3 className="opt_text">Direcciones </h3>
-          </div>
           <img
-            className="arrow"
+            className="arrow2"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
+          </div>
+          </Link>
         </div>
         <div className="OptContainer">
           <div className="ProfOptions">
@@ -103,7 +105,7 @@ const ProfilePage = () => {
             ></img>
             <h3 className="opt_text">Apadrinar </h3>
           <img
-            className="arrow2"
+            className="arrow6"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>

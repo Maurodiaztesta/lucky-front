@@ -58,6 +58,14 @@
   margin-right: 10px;
   margin-left: 120px;
 }
+.ProfileHolePage .arrow2 {
+  width: 8px;
+  height: 14px;
+  align-items: end;
+  display: flex;
+  margin-right: 10px;
+  margin-left: 183px;
+}
 .ProfileHolePage .arrow1 {
   width: 8px;
   height: 14px;
@@ -66,7 +74,7 @@
   margin-right: 10px;
   margin-left: 80px;
 }
-.ProfileHolePage .arrow2 {
+.ProfileHolePage .arrow6 {
   width: 8px;
   height: 14px;
   align-items: end;
