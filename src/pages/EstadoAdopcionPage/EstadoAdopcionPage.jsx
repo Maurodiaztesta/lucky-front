@@ -2,6 +2,7 @@ import "./EstadoAdopcionPage.css"
 import React, { useEffect, useState } from 'react'
 import Searcher from '../../components/Searcher/Searcher'
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const EstadoAdopcionPage = () => {
   const [animales, setAnimales] = useState([]);
@@ -25,10 +26,12 @@ const EstadoAdopcionPage = () => {
     const especieMatches = animal.datos.especie.toLowerCase().includes(search.toLowerCase());
     return showAll || nombreMatches || especieMatches;
   });
-
+  const navigate = useNavigate();
   return (
     <>
-      <Searcher search={search} handleSearcher={handleSearcher} />
+    <div className="SearcherDiv"><img onClick={ () => navigate('/adopt')} className="back" src="../../assets/img/logo/back.png" alt="back"></img>
+      <Searcher search={search} handleSearcher={handleSearcher} /></div>
+    
       <div className='padre'>
         {animalesFiltrados.length === 0 ? (
           <p className="noresultados">No se encontraron resultados</p>
