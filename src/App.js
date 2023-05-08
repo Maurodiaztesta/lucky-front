@@ -20,7 +20,6 @@ import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
 
 
 
-
 function App() {
   return (
     <div>
@@ -44,7 +43,7 @@ function App() {
             <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
           </Routes>
         </main>
-      </Router>
+      </Router> 
     </div>
   );
 }
