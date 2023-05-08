@@ -43,6 +43,7 @@ function SwiperHome() {
         </SwiperSlide>
 
         <SwiperSlide>
+        <Link  className="Status" to="/status">
           <div className="container1">
             <div className="img_container">
               <img src="./assets/img/logo/mascota.png" alt="" />
@@ -52,6 +53,7 @@ function SwiperHome() {
               <p>Revisa el proceso de tus adopciones en curso</p>
             </div>
           </div>
+          </Link>
         </SwiperSlide>
 
         <SwiperSlide>

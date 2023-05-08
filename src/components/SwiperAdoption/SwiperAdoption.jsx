@@ -35,7 +35,7 @@ function SwiperAdoption() {
               <img src="./assets/img/logo/perro.png" alt="" />
             </div>
             <div className="info_cont">
-            <p>Apolo</p>
+            <p className="p">Apolo</p>
             </div>
           </div>
         </SwiperSlide>
@@ -46,7 +46,7 @@ function SwiperAdoption() {
               <img src="./assets/img/logo/ave.png" alt="" />
             </div>
             <div className="info_cont">
-            <p>Kiko</p>
+            <p className="p">Kiko</p>
             </div>
           </div>
         </SwiperSlide>
@@ -57,7 +57,7 @@ function SwiperAdoption() {
             <img src="./assets/img/logo/ave.png" alt="" />
           </div>
           <div className="info_cont">
-            <p>Dalí</p>
+            <p className="p">Dalí</p>
             </div>
           </div>
         </SwiperSlide>

@@ -9,7 +9,7 @@ const PerfilAnimalPage = ({ animalId }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/animales/645691a200cf09d6b0fdf3c1`)
+      .get(`http://localhost:5000/animales/6458be3460583e3e68c5cc27`)
       .then((res) => {
         setAnimales([res.data]);
         console.log(res.data);

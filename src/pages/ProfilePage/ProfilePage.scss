@@ -1,10 +1,10 @@
+.ProfileHolePage{
+    width:100%;
+
 
 .NavBar{
     margin-top: 40px;
 
-}
-.ProfileHolePage{
-    width:100%;
 }
 .ProfContainer{
     
@@ -50,7 +50,7 @@
     width: 90%;
     display: flex;
     align-items: center;
-    // margin: 15px 10px 10px 5px;
+    //margin: 15px 10px 10px 5px;
     border: 1px solid rgb(189 210 214);
     border-radius: 4px;
 }
@@ -60,4 +60,58 @@
     align-items: end;
     display: flex;
     margin-right: 10px;
+    margin-left: 120px;
+}
+
+.arrow2{
+    width: 8px;
+    height: 14px;
+    align-items: end;
+    display: flex;
+    margin-right: 10px;
+    margin-left: 183px;
+}
+
+.arrow1{
+    width: 8px;
+    height: 14px;
+    align-items: end;
+    display: flex;
+    margin-right: 10px;
+    margin-left: 80px;
+}
+.arrow_apadrinar{
+    width: 8px;
+    height: 14px;
+    align-items: end;
+    display: flex;
+    margin-right: 10px;
+    margin-left: 190px;
+    justify-content: end;
+}
+
+.arrow_donation{
+    width: 8px;
+    height: 14px;
+    align-items: end;
+    display: flex;
+    margin-right: 10px;
+    margin-left: 223px;
+    justify-content: end;
+
+}
+.arrow_notification{
+    width: 8px;
+    height: 14px;
+    align-items: end;
+    display: flex;
+    margin-right: 10px;
+    margin-left: 163px;
+    justify-content: end;
+
+}
+
+a{
+    text-decoration: none;
+  }
 }
