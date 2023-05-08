@@ -16,6 +16,7 @@ import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
 import MapPage from "./pages/MapPage/MapPage";
+import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 
 
 
@@ -43,6 +44,7 @@ function App() {
             <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
             <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
             <Route path="/map" element={<MapPage></MapPage>}/>  
+            <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>  
           </Routes>
         </main>
       </Router> 

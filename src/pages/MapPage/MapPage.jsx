@@ -11,6 +11,7 @@ const MapPage = () => {
         <img
           className="disculpa__link--img"
           src="../../assets/img/imagenes/construccion.jpg"
+          alt="contruccion"
         ></img>
       </Link>
     </div>
