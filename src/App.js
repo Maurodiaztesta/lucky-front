@@ -20,6 +20,7 @@ import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 
 // BORRAR
 import Warning from "./components/Warning/Warning"
+import NotificationPage from "./pages/NotificationPage/NotificationPage";
 
 
 
@@ -49,6 +50,8 @@ function App() {
             <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
             <Route path="/map" element={<MapPage></MapPage>}/>  
             <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
+            <Route path="/notification" element={<NotificationPage></NotificationPage>}/>
+
             {/* BORRAR */}
             <Route path="/warning" element={<Warning></Warning>}/>  
           </Routes>
