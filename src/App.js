@@ -15,7 +15,7 @@ import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
-
+import Form from "./components/Forms/Form";
 
 
 
@@ -25,7 +25,7 @@ function App() {
     <Router>
         <main>
           <Routes>
-            <Route path="/" element={<SplashPage></SplashPage>}/>
+            {/* <Route path="/" element={<SplashPage></SplashPage>}/> */}
             <Route path="/home" element={<HomePage></HomePage>}/>
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
@@ -43,6 +43,7 @@ function App() {
           </Routes>
         </main>
       </Router> 
+      <Form></Form>
     </div>
   );
 }
