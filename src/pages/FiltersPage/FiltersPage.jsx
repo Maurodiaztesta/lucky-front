@@ -30,6 +30,7 @@ const FiltersPage = () => {
   const handleTamaño = (value) => {
     setTamaño(value);
   };
+  
   const handleEspecie = (value) => {
     setEspecie(value);
   };
