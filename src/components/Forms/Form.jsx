@@ -43,6 +43,7 @@ const Form = () => {
     console.log(data.FamiliaHogar);
     console.log(data.Mascota);
     const { register, watch } = useForm({ defaultValues: data });
+
     const handleContinue = () => {
         setPart(part + 1);
     }
@@ -64,7 +65,7 @@ const Form = () => {
             {part === 1 && (
                 <div className='partone'>
                     <div className='title__Form'>
-                        <h4 >Formulario de adopción</h4>
+                        <h3 >Formulario de adopción</h3>
                     </div>
                     <ProgressBar bgcolor="#FA9C93" progress={30} width={90} height={8}></ProgressBar>
                     <h3 className='partone__labels'>Tus Datos</h3>
@@ -91,31 +92,32 @@ const Form = () => {
                 <div className='partone'>
                     <div className='head'>
                         <img className='head__img' src="./assets/img/logo/back.png" onClick={handleBack} alt='logoBack'></img>
-                        <h4 className='head__title'>Formulario de adopción</h4>
+                        <h3 className='head__title'>Formulario de adopción</h3>
                     </div>
                     <ProgressBar bgcolor="#FA9C93" progress={50} width={90} height={8}></ProgressBar>
                     <h3 className='partone__pets'>Sobre las mascotas</h3>
                     <div className='another'>
-                        <label  className='another__animals'>¿Tienes otros animales?</label>
+                        <label className='another__animals'>¿Tienes otros animales?</label>
                         <div className='another__check' id='a'>
                             <label className='another__txt' htmlFor='y1'>Sí</label>
-                            <input className='another__inp' type='radio' id='y1' {...register("Mascota.OtrosAnimales")} onChange={onChange} name="y1" value="true" required />
+                            <input className='another__inp' type='radio' id='y1' {...register("Mascota.OtrosAnimales")} onChange={onChange}  value="true" />
                         </div>
                         <div className='another__check' id='b'>
                             <label className='another__txtn' htmlFor='n1'>No</label>
-                            <input className='another__inp' id='n1' type='radio'{...register("Mascota.OtrosAnimales")} onChange={onchange} name='y1' value="false" required />
+                            <input className='another__inp' id='n1' type='radio'{...register("Mascota.OtrosAnimales")} onChange={onchange} value="false" />
                         </div>
                     </div>
-                    <input className='partone__labels__inp' type='text' {...register("Mascota.CualesAnimales")} onChange={onChange} placeholder='¿Cuáles?' />
-                    <input className='partone__labels__inp' type='text' {...register("Mascota.SeLlevaBien")} onChange={onChange} placeholder='¿Se lleva bien con otros animales?' />
+                    <input className='partwo__labels__inp' type='text' {...register("Mascota.CualesAnimales")} onChange={onChange} placeholder='¿Cuáles?' />
+                    <input className='partwo__labels__inp' type='text' {...register("Mascota.SeLlevaBien")} onChange={onChange} placeholder='¿Se lleva bien con otros animales?' />
                     <label className='labelinp' htmlFor='da1'>¿Por qué has elegido adoptar?</label>
-                    <input className='partone__labels__inp' type='text' name='da1' {...register("Mascota.PorQueAdpotar")} onChange={onChange} />
+                    <input className='partwo__labels__inp' type='text' name='da1' {...register("Mascota.PorQueAdpotar")} onChange={onChange} />
                     <label className='labelinp' htmlFor='da2'>¿Conoces las necesidades del animal?</label>
-                    <input className='partone__labels__inp' type='text' {...register("Mascota.NecesidadesAnimal")} onChange={onChange} name='da2' />
+                    <input className='partwo__labels__inp' type='text' {...register("Mascota.NecesidadesAnimal")} onChange={onChange}  />
                     <label className='labelinp' htmlFor='da3'>¿Conoces sus gastos?</label>
-                    <input className='partone__labels__inp' type='text' {...register("Mascota.Gastos")} onChange={onChange} name='da3' />
+                    <input className='partwo__labels__inp' type='text' {...register("Mascota.Gastos")} onChange={onChange}  />
                     <label className='labelinp' htmlFor='da4'>¿Conoces su alimentación?</label>
-                    <input className='partone__labels__inp' type='text' {...register("Mascota.Alimentacion")} onChange={onChange} name='da4' />
+                    <input className='partwo__labels__inp' type='text' {...register("Mascota.Alimentacion")} onChange={onChange}  />
+                    
                     <div className='content'>
                         <button type='button' className='content__btn' onClick={handleContinue}>Continuar</button>
                     </div>
@@ -124,48 +126,94 @@ const Form = () => {
             )}
             {part === 3 && (
                 <div>
-                    <button type='button' onClick={handleBack}>back</button>
-                    <h4>Formulario de adopción</h4>
+                    <div className='head'>
+                        <img className='head__img' src="./assets/img/logo/back.png" onClick={handleBack} alt='logoBack'></img>
+                        <h3 className='head__title'>Formulario de adopción</h3>
+                    </div>
                     <ProgressBar bgcolor="#FA9C93" progress={100} width={90} height={8}></ProgressBar>
-                    <h3>Familia y hogar</h3>
-                    <label htmlFor='casa'>¿Dónde vives?</label>
-                    <input type='text' {...register("FamiliaHogar.DondeVives")} onChange={onChange} placeholder='Piso , casa , chalet...' />
-                    <h4>¿Vives de alquiler?</h4>
-                    <label htmlFor='ds1'>Sí</label>
-                    <input className='ds1' {...register("FamiliaHogar.Alquiler")} onChange={onChange} value="true" type='radio' />
-                    <label htmlFor='dn1'>no</label>
-                    <input type='radio' {...register("FamiliaHogar.Alquiler")} className='dn1' value="false" />
-                    <h4>¿Tu casero permite animales?</h4>
-                    <label htmlFor='ds2'>Sí</label>
-                    <input type='radio' {...register("FamiliaHogar.CaseroAnimales")} onChange={onChange} className='ds2' value="true" />
-                    <label htmlFor='dn2'>No</label>
-                    <input type='radio' {...register("FamiliaHogar.CaseroAnimales")} onChange={onChange} className='dn2' value="false" />
-                    <h4>¿Crees que podrías mudarte pronto?</h4>
-                    <label htmlFor='ds3'>Sí</label>
-                    <input type='radio' {...register("FamiliaHogar.MudartePronto")} onChange={onchange} className='ds3' value='true' />
-                    <label htmlFor='dn3'>No</label>
-                    <input type='radio' {...register("FamiliaHogar.MudartePronto")} onChange={onChange} className='dn3' value='false' />
-                    <h5>¿Tiene jardin?</h5>
-                    <label htmlFor='ds4'>Sí</label>
-                    <input type='radio' {...register("FamiliaHogar.Jardin")} onChange={onChange} className='ds4' value='true' />
-                    <label htmlFor='ds5'>No</label>
-                    <input type='radio' {...register("FamiliaHogar.Jardin")} onChange={onChange} className='ds5' value='true' />
-                    <h5>¿Vives con otras personas?</h5>
-                    <label htmlFor='ds5'>Sí</label>
-                    <input type='radio' {...register("FamiliaHogar.OtrasPersonas")} onChange={onChange} className='ds5' value='true' />
-                    <label htmlFor='dn5'>No</label>
-                    <input type='radio' className='dn5' {...register("FamiliaHogar.OtrasPersonas")} onChange={onChange} value='false' />
-                    <h5>¿Están todos de acuerdo con la adopción?</h5>
-                    <label htmlFor='ds6'>Sí</label>
-                    <input type='radio' className='ds6' {...register("FamiliaHogar.TodosDeAcuerdo")} onChange={onChange} value='true' />
-                    <label htmlFor='dn7'>No</label>
-                    <input type='radio' className='dn7' {...register("FamiliaHogar.TodosDeAcuerdo")} onChange={onChange} value='false' />
-                    <h5>¿Estás de acuerdo con que visitemos tu casa?</h5>
-                    <label htmlFor='ds7'>Sí</label>
-                    <input type='radio' {...register("FamiliaHogar.VisitarCasa")} onChange={onchange} value="true" className='ds7' />
-                    <label htmlFor='dn7'>No</label>
-                    <input type='radio' {...register("FamiliaHogar.VisitarCasa")} onChange={onChange} value="false" className='dn7' />
-                    <button type='submit' onClick={handleSubmit}>Enviar</button>
+                    <h3 className='partTrhee__labels'>Familia y hogar</h3>
+                    <label className='partTrhee__head' htmlFor='casa'>¿Dónde vives?</label>
+                    <input className='partTrhee__labels__inp' type='text' {...register("FamiliaHogar.DondeVives")} onChange={onChange} placeholder='Piso , casa , chalet...' />
+                    <div className='another'>
+                        <h3 className='partTrhee__labels__tag'>¿Vives de alquiler?</h3>
+                        <div className='another__check'>
+                            <label className='another__txt' htmlFor='ds1'>Sí</label>
+                            <input className='ds1' {...register("FamiliaHogar.Alquiler")} onChange={onChange} value="true" type='radio' />
+                        </div>
+                        <div className='another__check' >
+                            <label htmlFor='dn1'>No</label>
+                            <input type='radio' {...register("FamiliaHogar.Alquiler")} className='dn1' value="false" />
+                        </div>
+                    </div>
+                    <div className='another'>
+                        <h3 className='partTrhee__labels__tag'>¿Tu casero permite animales?</h3>
+                        <div className='another__check'>
+                            <label className='another__txt' htmlFor='ds2'>Sí</label>
+                            <input type='radio' {...register("FamiliaHogar.CaseroAnimales")} onChange={onChange} className='ds2' value="true" />
+                        </div>
+                        <div className='another__check'>
+                            <label htmlFor='dn2'>No</label>
+                            <input type='radio' {...register("FamiliaHogar.CaseroAnimales")} onChange={onChange} className='dn2' value="false" />
+                        </div>
+                    </div>
+                    <div className='another'>
+                        <h3 className='partTrhee__labels__tag'>¿Crees que podrías mudarte pronto?</h3>
+                        <div className='another__check'>
+                            <label className='another__txt' htmlFor='ds3'>Sí</label>
+                            <input type='radio' {...register("FamiliaHogar.MudartePronto")} onChange={onchange} className='ds3' value='true' />
+                        </div>
+                        <div className='another__check'>
+                            <label htmlFor='dn3'>No</label>
+                            <input type='radio' {...register("FamiliaHogar.MudartePronto")} onChange={onChange} className='dn3' value='false' />
+                        </div>
+                    </div>
+                    <div className='another'>
+                        <h3 className='partTrhee__labels__tag'>¿Tiene jardin?</h3>
+                        <div className='another__check'>
+                            <label className='another__txt' htmlFor='ds4'>Sí</label>
+                            <input type='radio' {...register("FamiliaHogar.Jardin")} onChange={onChange} className='ds4' value='true' />
+                        </div>
+                        <div className='another__check'>
+                            <label htmlFor='ds5'>No</label>
+                            <input type='radio' {...register("FamiliaHogar.Jardin")} onChange={onChange} className='ds5' value='false' />
+                        </div>
+                    </div>
+                    <div className='another'>
+                        <h3 className='partTrhee__labels__tag'>¿Vives con otras personas?</h3>
+                        <div className='another__check'>
+                            <label className='another__txt' htmlFor='ds5'>Sí</label>
+                            <input type='radio' {...register("FamiliaHogar.OtrasPersonas")} onChange={onChange} className='ds5' value='true' />
+                        </div>
+                        <div className='another__check'>
+                            <label htmlFor='dn5'>No</label>
+                            <input type='radio' className='dn5' {...register("FamiliaHogar.OtrasPersonas")} onChange={onChange} value='false' />
+                        </div>
+                    </div>
+                    <div className='another'>
+                        <h3 className='partTrhee__labels__tag'>¿Están todos de acuerdo con la adopción?</h3>
+                        <div className='another__check'>
+                            <label className='another__txt' htmlFor='ds6'>Sí</label>
+                            <input type='radio' className='ds6' {...register("FamiliaHogar.TodosDeAcuerdo")} onChange={onChange} value='true' />
+                        </div>
+                        <div className='another__check'>
+                            <label htmlFor='dn7'>No</label>
+                            <input type='radio' className='dn7' {...register("FamiliaHogar.TodosDeAcuerdo")} onChange={onChange} value='false' />
+                        </div>
+                    </div>
+                    <div className='another'>
+                        <h3 className='partTrhee__labels__tag'>¿Estás de acuerdo con que visitemos tu casa?</h3>
+                        <div className='another__check'>
+                            <label className='another__txt' htmlFor='ds7'>Sí</label>
+                            <input type='radio' {...register("FamiliaHogar.VisitarCasa")} onChange={onchange} value="true" className='ds7' />
+                        </div>
+                        <div className='another__check'>
+                            <label htmlFor='dn7'>No</label>
+                            <input type='radio' {...register("FamiliaHogar.VisitarCasa")} onChange={onChange} value="false" className='dn7' />
+                        </div>
+                    </div>
+                    <div className='content'>
+                        <button type='submit' className='content__btn' onClick={handleSubmit}>Enviar</button>
+                    </div>
                 </div>
             )}
         </form>

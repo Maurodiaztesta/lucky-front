@@ -7,10 +7,6 @@ import { setUserInfo } from "../../redux/actions/auth.actions";
 
 
 const HomePage = () => {
-
-  const userInfo = useSelector((state) => state.auth.userInfo);
-  console.log(userInfo);
-
   return (
     <div>
       <div className="HPpadre">
