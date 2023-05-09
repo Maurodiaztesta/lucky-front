@@ -5,6 +5,7 @@ import Searcher from "../../components/Searcher/Searcher";
 import NavBar from "../../components/NavBar/NavBar";
 import SwiperAdoption from "../../components/SwiperAdoption/SwiperAdoption";
 import Gallery from "../../components/Gallery/Gallery";
+import { Link } from "react-router-dom";
 
 const AdoptarPage = () => {
   const [animales, setAnimales] = useState([]);
@@ -27,6 +28,7 @@ const AdoptarPage = () => {
   };
   return (
     <>
+    
       <div className="APpadre">
         <div className="APpadre__top">
           <Searcher search={search} handleSearcher={handleSearcher} />
@@ -37,7 +39,7 @@ const AdoptarPage = () => {
               </h2>
               <img
                 className="APpadre__top--mascotas--añadir--img"
-                src="/assets/img/logo_seleccionado/mS.png"
+                src="/assets/img/logo_seleccionado/mS.png" alt=""
               ></img>
             </div>
             <p className="APpadre__top--mascotas--add">
@@ -50,13 +52,15 @@ const AdoptarPage = () => {
         </div>
         <div className="APpadre__linea"></div>
         <div className="APpadre__bot">
-          <a className="APpadre__bot--button" href="">
+        <div className="APpadre__bot--link">
+        <Link className="APpadre__bot--button" to="/status">
             <p className="APpadre__bot--button--p">Estado de adopción</p>
             <img
               className="APpadre__bot--button--img"
-              src="/assets/img/logo/front.png"
+              src="/assets/img/logo/front.png" alt=""
             ></img>
-          </a>
+          </Link>
+          </div>
           <div className="APpadre__bot--TG">
             <div className="APpadre__bot--TG--t">
               <h2 className="APpadre__bot--TG--t--h2">Animales en adopción</h2>

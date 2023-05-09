@@ -15,17 +15,20 @@ import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
-import MapPage from "./pages/MapPage/MapPage";
+import FormConfirm from "./components/FormConfirm/FormConfirm";
 import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import Warning from "./components/Warning/Warning"
 import AdoptStateFilter from "./components/AdoptStateFilter/AdoptStateFilter";
-
+import AuthComponent from "./components/Auth/Authcomponent";
+import MapPage from "./pages/MapPage/MapPage";
+import ProtectorasPage from "./pages/ProtectorasPage/ProtectorasPage";
 
 
 
 
 function App() {
+  
   return (
     <div>
     <Router>
@@ -36,7 +39,7 @@ function App() {
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
             <Route path="/login" element={<LoginPage></LoginPage>}/>
-            <Route path="/loginElection" element={<LoginElectionPage/>}/>            
+            <Route path="/loginElection" element={<LoginElectionPage/>}/>         
             <Route path="/profile" element={<ProfilePage/>}/>            
             <Route path="/more" element={<MasPage></MasPage>}/>            
             <Route path="/gallery" element={<Gallery/>}/> 
@@ -44,13 +47,15 @@ function App() {
             <Route path="/filters" element={<FiltersPage/>}/> 
             <Route path="/perfilanimal" element={<PerfilAnimalPage></PerfilAnimalPage>}/> 
             <Route path="/donation" element={<DonationPage></DonationPage>}/>  
-            <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
+            <Route path="/apadrinar" element={<AuthComponent component={<ApadrinarPage/>}/>}/>  
+            <Route path="/sent" element={<FormConfirm></FormConfirm>}/>
             <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
             <Route path="/map" element={<MapPage></MapPage>}/>  
             <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
             <Route path="/notification" element={<NotificationPage></NotificationPage>}/>
             <Route path="/warning" element={<Warning></Warning>}/>
             <Route path="/AdoptFilter" element={<AdoptStateFilter></AdoptStateFilter>}/>
+            <Route path="/protectoras" element={<ProtectorasPage></ProtectorasPage>}/>
           </Routes>
         </main>
       </Router> 
