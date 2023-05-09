@@ -13,4 +13,10 @@
 .NavLogo{
     width: 24pt;
     height: 24pt;
+    &__border{
+        width: 24pt;
+        height: 24pt;
+        border: 2px solid #FA9C93;
+        border-radius: 50%;
+    }
 }
