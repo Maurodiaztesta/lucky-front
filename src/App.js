@@ -1,4 +1,4 @@
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router} from "react-router-dom";
 import './App.css';
 import SplashPage from './pages/SplashPage/SplashPage';
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
@@ -20,7 +20,7 @@ import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import Warning from "./components/Warning/Warning"
 import AuthComponent from "./components/Auth/Authcomponent";
-import MapPage from "./pages/MapPage/MapPage";
+import Form from "./components/Forms/Form";
 
 
 
@@ -32,6 +32,7 @@ function App() {
     <Router>
         <main>
           <Routes>
+            <Route path="/form" element={<Form/>}/>
             <Route path="/" element={<SplashPage></SplashPage>}/>
             <Route path="/home" element={<HomePage></HomePage>}/>
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
@@ -53,7 +54,8 @@ function App() {
             <Route path="/warning" element={<Warning></Warning>}/>
           </Routes>
         </main>
-      </Router> 
+      </Router>
+
     </div>
   );
 }

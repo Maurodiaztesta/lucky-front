@@ -1,3 +1,4 @@
+import HomePage from "../../pages/HomePage/HomePage";
 import { API } from "../../shared/api";
 import Cookies from 'js-cookie';
 
@@ -27,6 +28,7 @@ export const handleRegister = (formData , navigate) => async(dispatch) => {
     } catch (error) { 
         dispatch({ type: "regiser_user_ko", payload: error })
     }
+    
 }
 
 export const logoutUser = (navigate) => (dispatch) => {
