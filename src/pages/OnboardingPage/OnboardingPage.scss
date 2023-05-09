@@ -19,6 +19,11 @@
     &__top{
         width: 70%;
         margin-top: 117px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
         &--img{
             width: 238px;
             margin-bottom: 55px;
