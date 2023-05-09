@@ -28,6 +28,7 @@ const AdoptarPage = () => {
   };
   return (
     <>
+    
       <div className="APpadre">
         <div className="APpadre__top">
           <Searcher search={search} handleSearcher={handleSearcher} />
