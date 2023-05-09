@@ -19,6 +19,7 @@ import MapPage from "./pages/MapPage/MapPage";
 import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import Warning from "./components/Warning/Warning"
+import AdoptStateFilter from "./components/AdoptStateFilter/AdoptStateFilter";
 
 
 
@@ -49,6 +50,7 @@ function App() {
             <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
             <Route path="/notification" element={<NotificationPage></NotificationPage>}/>
             <Route path="/warning" element={<Warning></Warning>}/>
+            <Route path="/AdoptFilter" element={<AdoptStateFilter></AdoptStateFilter>}/>
           </Routes>
         </main>
       </Router> 
