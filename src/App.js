@@ -1,4 +1,4 @@
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router} from "react-router-dom";
 import './App.css';
 import SplashPage from './pages/SplashPage/SplashPage';
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
@@ -19,7 +19,8 @@ import MapPage from "./pages/MapPage/MapPage";
 import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import Warning from "./components/Warning/Warning"
-
+import AuthComponent from "./components/Auth/Authcomponent";
+import Form from "./components/Forms/Form";
 
 
 
@@ -31,6 +32,7 @@ function App() {
     <Router>
         <main>
           <Routes>
+            <Route path="/form" element={<Form/>}/>
             <Route path="/" element={<SplashPage></SplashPage>}/>
             <Route path="/home" element={<HomePage></HomePage>}/>
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
@@ -44,7 +46,7 @@ function App() {
             <Route path="/filters" element={<FiltersPage/>}/> 
             <Route path="/perfilanimal" element={<PerfilAnimalPage></PerfilAnimalPage>}/> 
             <Route path="/donation" element={<DonationPage></DonationPage>}/>  
-            <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
+            <Route path="/apadrinar" element={<AuthComponent component={<ApadrinarPage/>}/>}/>  
             <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
             <Route path="/map" element={<MapPage></MapPage>}/>  
             <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
@@ -52,7 +54,8 @@ function App() {
             <Route path="/warning" element={<Warning></Warning>}/>
           </Routes>
         </main>
-      </Router> 
+      </Router>
+
     </div>
   );
 }

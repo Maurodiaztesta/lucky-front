@@ -17,9 +17,9 @@
       border-right: none;
       border-left: none;
       margin-left: 10px;
-      width: 90%;
+      width: 85%;
       height: 20px;
-      margin-top: 20px;
+      padding: 10px;
     }
     &__inpCheck {
       width: 30px;
@@ -109,7 +109,7 @@
   }
   
   &__txt{
-    margin-left: 3px;
+    margin-left: 4px;
   }
   &__txtn{
     margin-left: 2px;
@@ -166,6 +166,62 @@ input[type="radio"] {
 .labelinp{
   color: #010101bd;
   font-size:medium ;
-  margin-left: 1rem;
-  margin-top: 10px;
+  left: 1rem;
+  top: 20px;
+  position: relative;
+}
+.partwo__labels__inp{
+      border-bottom: 1px solid #7eb6e7;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      margin-left: 10px;
+      width: 85%;
+      height: 20px;
+      padding: 6.5px;
+      margin-top: 15px;
+}
+.partwo__labels__inp:focus{
+  outline: none;
+}
+
+.partTrhee__labels{
+  
+    color: #01748e;
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+}
+.partTrhee__head{
+  color: #010101bd;
+    font-size: medium;
+    margin-left: 5px;
+    position: relative;
+    padding: 5px;
+    top: 5px;
+    
+}
+.partTrhee__labels__inp{
+  border-bottom: 1px solid #7eb6e7;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  margin-left: 5px;
+  width: 85%;
+  height: 20px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.partTrhee__labels__inp:focus{
+  outline: none;
+}
+.partTrhee__labels__tag{
+  margin-top: 15px;
+  margin-left: 10px;
+  color: #1D4249;
+  font-size: 1rem;
+  text-align: left;
+  width: 70%;
+  
 }

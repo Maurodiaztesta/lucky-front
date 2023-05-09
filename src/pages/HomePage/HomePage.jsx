@@ -4,6 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import SwiperHome from "../../components/Swiper/SwiperHome";
 
 const HomePage = () => {
+  
   return (
     <div>
       <div className="HPpadre">
