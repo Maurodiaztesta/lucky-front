@@ -15,8 +15,11 @@ import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
-import AuthComponent from "./components/Auth/Authcomponent";
-import { useSelector } from "react-redux";
+import MapPage from "./pages/MapPage/MapPage";
+import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
+import NotificationPage from "./pages/NotificationPage/NotificationPage";
+import Warning from "./components/Warning/Warning"
+
 
 
 
@@ -29,8 +32,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<SplashPage></SplashPage>}/>
-            {/* <Route path="/home" element={<HomePage></HomePage>}/> */}
-            <Route path="/home" element={<AuthComponent component={<HomePage/>}/>}/>
+            <Route path="/home" element={<HomePage></HomePage>}/>
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
             <Route path="/login" element={<LoginPage></LoginPage>}/>
@@ -44,6 +46,10 @@ function App() {
             <Route path="/donation" element={<DonationPage></DonationPage>}/>  
             <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
             <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
+            <Route path="/map" element={<MapPage></MapPage>}/>  
+            <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
+            <Route path="/notification" element={<NotificationPage></NotificationPage>}/>
+            <Route path="/warning" element={<Warning></Warning>}/>
           </Routes>
         </main>
       </Router> 

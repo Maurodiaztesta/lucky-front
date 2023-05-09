@@ -1,9 +1,18 @@
-.ProfContainer{
+.mainMas{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: scroll;
+}
+.ProfContainer2{
     display: flex;
     flex-direction: column;
-    margin-top: 73px;
     align-items: center;
+    justify-content: flex-start;
     gap: 16px;
+    margin-top: 51px;
 }
 .Img_Center{
     display: flex;
