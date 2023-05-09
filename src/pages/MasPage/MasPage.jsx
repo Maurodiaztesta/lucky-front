@@ -1,6 +1,8 @@
 import NavBar from "../../components/NavBar/NavBar";
 import "./MasPage.css"
 import React from "react";
+import Logout from "../../components/Out/logout"
+import { Link } from "react-router-dom";
 
 const MasPage = () => {
   return (
@@ -8,14 +10,14 @@ const MasPage = () => {
     <div className="mainMas">
       <div className="ProfContainer2">
         <div className="OptContainer">
-          <div className="ProfOptions">
+          <Link to="/protectoras" className="ProfOptions">
             <img
               className="opt_img"
               src="../../../assets/img/logo/caseta.png"
               alt="Perfil"
             ></img>
             <h3 className="opt_text">Asociaciones protectoras </h3>
-          </div>
+          </Link>
           <img
             className="arrow"
             src="../../../assets/img/logo_seleccionado/arrow.png"
@@ -83,21 +85,7 @@ const MasPage = () => {
           ></img>
         </div>
         <div className="spaceG"></div>
-        <div className="OptContainer">
-          <div className="ProfOptions">
-            <img
-              className="opt_img"
-              src="../../../assets/img/logo/puerta.png"
-              alt="Perfil"
-            ></img>
-            <h3 className="opt_text">Cerrar sesión </h3>
-          </div>
-          <img
-            className="arrow"
-            src="../../../assets/img/logo_seleccionado/arrow.png"
-            alt=""
-          ></img>
-        </div>
+        <Logout></Logout>
       </div>
     </div>
     <NavBar></NavBar>

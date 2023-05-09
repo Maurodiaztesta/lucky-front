@@ -11,7 +11,7 @@
 }
 
 .AdoptStateFilter-content {
-  width: 307px;
+  width: 70%;
   height: 232px;
   background-color: #fff;
   border-radius: 5px;
@@ -43,7 +43,7 @@
   border: 2px solid #BDD2D6;
   border-radius: 8px;
   background-color: white;
-  margin-left: 16px;
+  margin: 8px;
   font-size: 12px;
   color: rgb(1, 116, 142);
 }

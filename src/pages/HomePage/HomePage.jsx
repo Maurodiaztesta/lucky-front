@@ -1,15 +1,17 @@
 import "./HomePage.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import SwiperHome from "../../components/Swiper/SwiperHome";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserInfo } from "../../redux/actions/auth.actions";
+
 
 const HomePage = () => {
-  
   return (
     <div>
       <div className="HPpadre">
         <div className="HPpadre__header">
-          <h2 className="HPpadre__header--saludo">¡Hola $USER$!</h2>
+          {userInfo === null ? <h2 className="HPpadre__header--saludo">¡Hola!</h2> : <h2 className="HPpadre__header--saludo">¡Hola {userInfo?.name}!</h2>}
           {/* <h1>Colocar slider</h1> */}
           <div className="HPpadre__header--swiper">
             <SwiperHome></SwiperHome>

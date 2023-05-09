@@ -4,16 +4,14 @@ import React from 'react'
 const Searcher = ({ search, handleSearcher }) => {
   return (
     <div className="main">
-      <div className="containerInput">
-        
+      <div className={window.location.pathname === "/adopt" ? "containerInputAdopt" : "containerInput"}>
         <input
           type="text"
-          className="inputBuscar"
+          className={window.location.pathname === "/adopt" ? "inputBuscarAdopt" : "inputBuscar"}
           value={search}
           placeholder="Buscar"
           onChange={handleSearcher}
         />
-       <img className="back" src="../../assets/img/logo/filtro.png" alt="filter"></img>
       </div>
     </div>
   )

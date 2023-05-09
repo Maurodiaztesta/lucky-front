@@ -11,11 +11,20 @@ export const userLogin = (formData , navigate) => async(dispatch, getState) => {
         Cookies.set('token', results.data.token);
         dispatch({ type: "user_login_ok", payload: results.data });
         navigate('/home');
+        dispatch(setUserInfo(results.data.userData));
     } catch (error) {
         dispatch({ type: "user_login_ko", payload: error })
     }
 }
 
+export const setUserInfo = (userInfo) => {
+    return {
+      type: "SET_USER_INFO",
+      payload: userInfo,
+    };
+  };
+
+  
 export const handleRegister = (formData , navigate) => async(dispatch) => {
     dispatch({ type: "register_user"})
 

@@ -21,14 +21,13 @@ const AdoptarPage = () => {
     setSearch(busqueda);
     if (animales.length > 0) {
       const filtrado = animales.filter((animal) =>
-        animal.datos.nombre.toLowerCase().includes(busqueda.toLowerCase())
+        animal.datos.especie.toLowerCase().includes(busqueda.toLowerCase())
       );
       setAnimalesFiltrados(filtrado);
     }
   };
   return (
     <>
-    
       <div className="APpadre">
         <div className="APpadre__top">
           <Searcher search={search} handleSearcher={handleSearcher} />
@@ -39,7 +38,8 @@ const AdoptarPage = () => {
               </h2>
               <img
                 className="APpadre__top--mascotas--añadir--img"
-                src="/assets/img/logo_seleccionado/mS.png" alt=""
+                src="/assets/img/logo_seleccionado/mS.png"
+                alt=""
               ></img>
             </div>
             <p className="APpadre__top--mascotas--add">
@@ -52,18 +52,26 @@ const AdoptarPage = () => {
         </div>
         <div className="APpadre__linea"></div>
         <div className="APpadre__bot">
-        <div className="APpadre__bot--link">
-        <Link className="APpadre__bot--button" to="/status">
-            <p className="APpadre__bot--button--p">Estado de adopción</p>
-            <img
-              className="APpadre__bot--button--img"
-              src="/assets/img/logo/front.png" alt=""
-            ></img>
-          </Link>
+          <div className="APpadre__bot--link">
+            <Link className="APpadre__bot--button" to="/status">
+              <p className="APpadre__bot--button--p">Estado de adopción</p>
+              <img
+                className="APpadre__bot--button--img"
+                src="/assets/img/logo/front.png"
+                alt=""
+              ></img>
+            </Link>
           </div>
           <div className="APpadre__bot--TG">
             <div className="APpadre__bot--TG--t">
               <h2 className="APpadre__bot--TG--t--h2">Animales en adopción</h2>
+              <Link to={"/filters"}>
+                <img
+                  className="filter_results"
+                  src="../../assets/img/logo/filtro.png"
+                  alt="filter"
+                ></img>
+              </Link>
             </div>
             {animalesFiltrados.length > 0 || search === "" ? (
               <div className="APpadre__bot--TG--g">
