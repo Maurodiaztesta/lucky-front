@@ -2,6 +2,7 @@ const INITIAL_STATE = {
     user : null,
     token: null,
     error: null,
+    auth : false,
     isLoading: false
 }
 
@@ -11,7 +12,7 @@ const authReducer = (state = INITIAL_STATE, action) => {
             return {...state, isLoading: true }
         }
         case "user_login_ok" : {
-            return {...state, isLoading: false , user: action.payload.userInfo, token : action.payload.token}
+            return {...state, isLoading: false , user: action.payload.userData, token : action.payload.token , auth : true}
         }
         case "user_login_ko" : {
             return {...state, isLoading: false , error: action.payload}
@@ -20,7 +21,7 @@ const authReducer = (state = INITIAL_STATE, action) => {
             return {...state, isLoading : true}
         }
         case "register_user_ok" : {
-            return {...state, isLoading : false , user: action.payload, error:null}
+            return {...state, isLoading : false , user: action.payload.newEmail , token: action.payload.token, error:null , auth : true}
         }
         case "register_user_ko" : {
             return {...state, isLoading : false ,  error : action.payload}
