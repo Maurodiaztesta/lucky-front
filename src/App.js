@@ -25,6 +25,7 @@ import Warning from "./components/Warning/Warning"
 
 
 function App() {
+  
   return (
     <div>
     <Router>
@@ -35,7 +36,7 @@ function App() {
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
             <Route path="/login" element={<LoginPage></LoginPage>}/>
-            <Route path="/loginElection" element={<LoginElectionPage/>}/>            
+            <Route path="/loginElection" element={<LoginElectionPage/>}/>         
             <Route path="/profile" element={<ProfilePage/>}/>            
             <Route path="/more" element={<MasPage></MasPage>}/>            
             <Route path="/gallery" element={<Gallery/>}/> 
