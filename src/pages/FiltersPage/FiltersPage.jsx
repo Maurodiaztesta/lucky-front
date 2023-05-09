@@ -12,7 +12,7 @@ const FiltersPage = () => {
   const [tamaño, setTamaño] = useState("");
   const [sexo, setSexo] = useState("");
   const [protectorasFiltradas, setProtectorasFiltradas] = useState([]);
-  
+
   useEffect(() => {
     axios.get("http://localhost:5000/protectora").then((res) => {
       setProtectoras(res.data);
@@ -30,7 +30,7 @@ const FiltersPage = () => {
   const handleTamaño = (value) => {
     setTamaño(value);
   };
-  
+
   const handleEspecie = (value) => {
     setEspecie(value);
   };
@@ -43,19 +43,36 @@ const FiltersPage = () => {
         if (tamaño) numAtributos++;
         if (especie) numAtributos++;
         if (numAtributos === 1) {
-          if ((sexo && animal.datos.sexo === sexo) ||
-              (tamaño && animal.datos.tamaño === tamaño) ||
-              (especie && animal.datos.especie === especie)) {
+          if (
+            (sexo && animal.datos.sexo === sexo) ||
+            (tamaño && animal.datos.tamaño === tamaño) ||
+            (especie && animal.datos.especie === especie)
+          ) {
             animalesFiltrados.push(animal);
           }
         } else if (numAtributos === 2) {
-          if ((sexo && tamaño && animal.datos.sexo === sexo && animal.datos.tamaño === tamaño) ||
-              (sexo && especie && animal.datos.sexo === sexo && animal.datos.especie === especie) ||
-              (tamaño && especie && animal.datos.tamaño === tamaño && animal.datos.especie === especie)) {
+          if (
+            (sexo &&
+              tamaño &&
+              animal.datos.sexo === sexo &&
+              animal.datos.tamaño === tamaño) ||
+            (sexo &&
+              especie &&
+              animal.datos.sexo === sexo &&
+              animal.datos.especie === especie) ||
+            (tamaño &&
+              especie &&
+              animal.datos.tamaño === tamaño &&
+              animal.datos.especie === especie)
+          ) {
             animalesFiltrados.push(animal);
           }
         } else if (numAtributos === 3) {
-          if (animal.datos.sexo === sexo && animal.datos.tamaño === tamaño && animal.datos.especie === especie) {
+          if (
+            animal.datos.sexo === sexo &&
+            animal.datos.tamaño === tamaño &&
+            animal.datos.especie === especie
+          ) {
             animalesFiltrados.push(animal);
           }
         }
@@ -63,7 +80,13 @@ const FiltersPage = () => {
     }
     console.log(animalesFiltrados);
     dispatch(setAnimalesFiltrados(animalesFiltrados));
+
   };
+
+  const borrar = () => {
+    window.location.reload()
+  }
+  
   return (
     <div className="main">
       <div className="main__header">
@@ -439,85 +462,27 @@ const FiltersPage = () => {
                 Grande
               </p>
             </button>
-            <button onClick={() => handleFilter()}>
-            <Link to="/filterResults">APLICAR</Link>
-            </button>
+            <div className="main__body--divbotones">
+              <button
+                className="main__body--aplicar2"
+                onClick={borrar}
+                >
+                  Borrar filtros
+              </button>
+              <button
+                className="main__body--aplicar"
+                onClick={() => handleFilter()}
+              >
+                <Link className="main__body--aplicar--link" to="/filterResults">
+                  Aplicar
+                </Link>
+              </button>
+            </div>
           </div>
         </div>
-        {/* <button type="submit" onClick={aplicar} className="main__body--aplicar">
-          Aplicar
-        </button> */}
-      </div>
-      <div>
-        {/* {protectorasF.map((protectora, index) => (
-          <div key={index}>
-            <p>{protectora.name}</p>
-            <p>{protectora.city}</p>
-            <img src={protectora.image}></img>
-          </div>
-        ))} */}
       </div>
     </div>
   );
 };
 
 export default FiltersPage;
-
-// useEffect(() => {
-//   let protectCopy = [];
-//   let info = [];
-//   axios.get("http://localhost:5000/protectora").then((res) => {
-//     info = res.data;
-//     console.log(info);
-//     for (const pro of info) {
-//       if (
-//         pro.city
-//           .toLowerCase()
-//           .includes(activeButtons.ciudad.toLocaleLowerCase())
-//       ) {
-//         protectCopy.push(pro);
-//       }
-//     }
-//     setProtectorasF(protectCopy);
-//   });
-// }, [activeButtons]);
-
-// useEffect(() => {
-//   let protectCopy = [];
-//   let protect = [];
-//   axios.get("http://localhost:5000/protectora").then((res) => {
-//     protect = res.data;
-//     // console.log(protect);
-//     for (const protectora of protect) {
-//       if (
-//         protectora.city
-//           .toLowerCase()
-//           .includes(activeButtons.ciudad.toLocaleLowerCase())
-//       ) {
-//         protectCopy.push(protectora);
-//       }
-//       for (const animal of protectora.animals) {
-//         console.log(animal);
-//         if (
-//           animal.datos.especie
-//             .toLowerCase()
-//             .includes(activeButtons.especie.toLocaleLowerCase())
-//         ) {
-//           protectCopy.push(animal);
-//         } else if (
-//           animal.datos.sexo
-//           .toLowerCase()
-//           .includes(activeButtons.sexo.toLocaleLowerCase())) {
-//             protectCopy.push(animal);
-//         } else if (
-//           animal.datos.tamaño
-//           .toLowerCase()
-//           .includes(activeButtons.tamaño.toLocaleLowerCase())) {
-//           protectCopy.push(animal);
-//         }
-//       }
-//     }
-//     setProtectorasF(protectCopy);
-//   });
-// }, []);
-// console.log(protectorasF);
