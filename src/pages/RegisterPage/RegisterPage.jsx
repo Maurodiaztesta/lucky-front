@@ -3,17 +3,18 @@ import "./RegisterPage.css"
 import React from 'react'
 import { useDispatch } from "react-redux";
 import { handleRegister } from "../../redux/actions/auth.actions";
+import { useNavigate } from "react-router-dom";
 
 
 const RegisterPage = () => {
   const {register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
-  
+  const navigate = useNavigate();
+
     const userRegister =  async (formData) => {
-      dispatch(handleRegister(formData))
+      dispatch(handleRegister(formData , navigate))
       console.log(formData);
     }
-    
     
   return (
     <div className="father">
