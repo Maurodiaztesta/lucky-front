@@ -5,7 +5,7 @@ const Searcher = ({ search, handleSearcher }) => {
   return (
     <div className="main">
       <div className="containerInput">
-        <img className="back" src="../../assets/img/logo/back.png" alt="back"></img>
+        
         <input
           type="text"
           className="inputBuscar"
@@ -13,7 +13,7 @@ const Searcher = ({ search, handleSearcher }) => {
           placeholder="Buscar"
           onChange={handleSearcher}
         />
-        <img className="back" src="../../assets/img/logo/filtro.png" alt="filter"></img>
+       <img className="back" src="../../assets/img/logo/filtro.png" alt="filter"></img>
       </div>
     </div>
   )

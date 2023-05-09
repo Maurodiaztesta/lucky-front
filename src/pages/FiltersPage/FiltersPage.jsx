@@ -1,98 +1,68 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./FiltersPage.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useForm } from "react-hook-form";
+
 
 const FiltersPage = () => {
-
-  const [protectoras, setPortectoras] = useState([]);
-  const [protectorasF, setPortectorasF] = useState([]);
-
+  const [protectoras, setProtectoras] = useState([]);
   const [select, setSelect] = useState("Barcelona");
 
-  const [activeButtons, setActiveButtons] = useState({
-    especie: null,
-    sexo: null,
-    tamaño: null,
-    ciudad: select,
-  });
-
+  const [especie, setEspecie] = useState("");
+  const [tamaño, setTamaño] = useState("");
+  const [sexo, setSexo] = useState("");
+  const [protectorasFiltradas, setProtectorasFiltradas] = useState([]);
+  
   useEffect(() => {
     axios.get("http://localhost:5000/protectora").then((res) => {
-      setPortectoras(res.data);
-      // console.log(res.data);
+      setProtectoras(res.data);
     });
   }, []);
-
-
-
   useEffect(() => {
-    let protectCopy = [];
-    let protect = [];
-    axios.get("http://localhost:5000/protectora").then((res) => {
-      protect = res.data;
-      // console.log(protect);
-      let protectorasFiltradas = protect.filter(protectora => 
-        protectora.city.toLowerCase().includes(activeButtons.ciudad.toLowerCase())
-      )
-      // console.log(protectorasFiltradas);
-      
-      let animalesFiltrados = protectorasFiltradas.map((protectora) => {
-        let animalesFiltrados2 = protectora.animals.filter((animal) => {
-          let especieFiltro = !animal.datos.especie
-            .toLowerCase()
-            .includes(activeButtons.especie.toLowerCase());
-          let sexoFiltro = !animal.datos.sexo
-            .toLowerCase()
-            .includes(activeButtons.sexo.toLowerCase());
-          let tamañoFiltro = !animal.datos.tamaño
-            .toLowerCase()
-            .includes(activeButtons.tamaño.toLowerCase());
-          return especieFiltro && sexoFiltro && tamañoFiltro;
-        });
-        return { ...protectora, animals: animalesFiltrados2 };
-      });
-      setPortectorasF(animalesFiltrados);
+    const protectorasFiltradas = protectoras.filter((protectora) => {
+      return protectora.city === select;
     });
-  }, [activeButtons]);
+    setProtectorasFiltradas(protectorasFiltradas);
+  }, [protectoras, select]);
+  const handleSexo = (value) => {
+    setSexo(value);
+  };
+  const handleTamaño = (value) => {
+    setTamaño(value);
+  };
   
-  console.log(protectorasF);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const changeButton = (buttonId, name) => {
-    setActiveButtons((prevState) => ({
-      ...prevState,
-      especie: buttonId === activeButtons.especie ? null : name,
-      ciudad: select,
-    }));
+  const handleEspecie = (value) => {
+    setEspecie(value);
   };
-
-  const changeButton2 = (buttonId, name) => {
-    setActiveButtons((prevState) => ({
-      ...prevState,
-      sexo: buttonId === activeButtons.sexo ? null : name,
-      ciudad: select,
-    }));
+  const handleFilter = () => {
+    const animalesFiltrados = [];
+    for (const protectora of protectorasFiltradas) {
+      for (const animal of protectora.animals) {
+        let numAtributos = 0;
+        if (sexo) numAtributos++;
+        if (tamaño) numAtributos++;
+        if (especie) numAtributos++;
+        if (numAtributos === 1) {
+          if ((sexo && animal.datos.sexo === sexo) ||
+              (tamaño && animal.datos.tamaño === tamaño) ||
+              (especie && animal.datos.especie === especie)) {
+            animalesFiltrados.push(animal);
+          }
+        } else if (numAtributos === 2) {
+          if ((sexo && tamaño && animal.datos.sexo === sexo && animal.datos.tamaño === tamaño) ||
+              (sexo && especie && animal.datos.sexo === sexo && animal.datos.especie === especie) ||
+              (tamaño && especie && animal.datos.tamaño === tamaño && animal.datos.especie === especie)) {
+            animalesFiltrados.push(animal);
+          }
+        } else if (numAtributos === 3) {
+          if (animal.datos.sexo === sexo && animal.datos.tamaño === tamaño && animal.datos.especie === especie) {
+            animalesFiltrados.push(animal);
+          }
+        }
+      }
+    }
+    console.log(animalesFiltrados);
   };
-
-  const changeButton3 = (buttonId, name) => {
-    setActiveButtons((prevState) => ({
-      ...prevState,
-      tamaño: buttonId === activeButtons.tamaño ? null : name,
-      ciudad: select,
-    }));
-  };
-
-  const aplicar = () => {
-    console.log(activeButtons);
-  };
-
   return (
     <div className="main">
       <div className="main__header">
@@ -127,10 +97,10 @@ const FiltersPage = () => {
           <h2 className="main__body--especie--titulo">Especie</h2>
           <div className="main__body--especie--gallery">
             <button
-              onClick={() => changeButton(1, "perro")}
+              onClick={() => handleEspecie("Perro")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.especie === "perro" ? (
+              {especie === "Perro" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/perro.png"
@@ -148,10 +118,10 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton(2, "gato")}
+              onClick={() => handleEspecie("Gato")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.especie === "gato" ? (
+              {especie === "Gato" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/gato.png"
@@ -169,10 +139,10 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton(3, "conejo")}
+              onClick={() => handleEspecie("Conejo")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.especie === "conejo" ? (
+              {especie === "Conejo" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/conejo.png"
@@ -190,10 +160,10 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton(4, "cobaya")}
+              onClick={() => handleEspecie("Cobaya")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.especie === "cobaya" ? (
+              {especie === "Cobaya" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/cobaya.png"
@@ -211,10 +181,10 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton(5, "pequeño mamifero")}
+              onClick={() => handleEspecie("Pequeño mamifero")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.especie === "pequeño mamifero" ? (
+              {especie === "Pequeño mamifero" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/pequeño_mamifero.png"
@@ -232,10 +202,11 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton(6, "huron")}
+              onClick={() => handleEspecie("Huron")}
+              value="Huron"
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.especie === "huron" ? (
+              {especie === "Huron" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/huron.png"
@@ -253,10 +224,10 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton(7, "pez")}
+              onClick={() => handleEspecie("Pez")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.especie === "pez" ? (
+              {especie === "Pez" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/pez.png"
@@ -272,10 +243,11 @@ const FiltersPage = () => {
               <p className="main__body--especie--gallery--button--texto">Pez</p>
             </button>
             <button
-              onClick={() => changeButton(8, "reptil")}
+              onClick={() => handleEspecie("Reptil")}
+              value="Reptil"
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.especie === "reptil" ? (
+              {especie === "Reptil" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/reptil.png"
@@ -293,10 +265,10 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton(9, "anfibio")}
+              onClick={() => handleEspecie("Anfibio")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.especie === "anfibio" ? (
+              {especie === "Anfibio" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/anfibio.png"
@@ -314,10 +286,11 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton(10, "aracnido o insecto")}
+              onClick={() => handleEspecie("Aracnido o insecto")}
+              value="Aracnido o insecto"
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.especie === "aracnido o insecto" ? (
+              {especie === "Aracnido o insecto" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/araña.png"
@@ -335,10 +308,11 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton(11, "ave")}
+              onClick={() => handleEspecie("Ave")}
+              value="Ave"
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.especie === "ave" ? (
+              {especie === "Ave" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/ave.png"
@@ -357,10 +331,10 @@ const FiltersPage = () => {
           <h2 className="main__body--especie--titulo">Sexo</h2>
           <div className="main__body--especie--gallery">
             <button
-              onClick={() => changeButton2(1, "hembra")}
+              onClick={() => handleSexo("Hembra")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.sexo === "hembra" ? (
+              {sexo === "Hembra" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/female.png"
@@ -378,10 +352,10 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton2(2, "macho")}
+              onClick={() => handleSexo("Macho")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.sexo === "macho" ? (
+              {sexo === "Macho" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/male.png"
@@ -402,10 +376,10 @@ const FiltersPage = () => {
           <h2 className="main__body--especie--titulo">Tamaño</h2>
           <div className="main__body--especie--gallery">
             <button
-              onClick={() => changeButton3(1, "pequeño")}
+              onClick={() => handleTamaño("Pequeño")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.tamaño === "pequeño" ? (
+              {tamaño === "Pequeño" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/pequeño.png"
@@ -423,10 +397,10 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton3(2, "mediano")}
+              onClick={() => handleTamaño("Mediano")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.tamaño === "mediano" ? (
+              {tamaño === "Mediano" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/mediano.png"
@@ -444,10 +418,10 @@ const FiltersPage = () => {
               </p>
             </button>
             <button
-              onClick={() => changeButton3(3, "grande")}
+              onClick={() => handleTamaño("Grande")}
               className="main__body--especie--gallery--button"
             >
-              {activeButtons.tamaño === "grande" ? (
+              {tamaño === "Grande" ? (
                 <img
                   className="main__body--especie--gallery--button--img"
                   src="./assets/img/logo_seleccionado/grande.png"
@@ -464,11 +438,14 @@ const FiltersPage = () => {
                 Grande
               </p>
             </button>
+            <button onClick={() => handleFilter()}>
+            Aplicar
+            </button>
           </div>
         </div>
-        <button type="submit" onClick={aplicar} className="main__body--aplicar">
+        {/* <button type="submit" onClick={aplicar} className="main__body--aplicar">
           Aplicar
-        </button>
+        </button> */}
       </div>
       <div>
         {/* {protectorasF.map((protectora, index) => (
@@ -485,66 +462,61 @@ const FiltersPage = () => {
 
 export default FiltersPage;
 
+// useEffect(() => {
+//   let protectCopy = [];
+//   let info = [];
+//   axios.get("http://localhost:5000/protectora").then((res) => {
+//     info = res.data;
+//     console.log(info);
+//     for (const pro of info) {
+//       if (
+//         pro.city
+//           .toLowerCase()
+//           .includes(activeButtons.ciudad.toLocaleLowerCase())
+//       ) {
+//         protectCopy.push(pro);
+//       }
+//     }
+//     setProtectorasF(protectCopy);
+//   });
+// }, [activeButtons]);
 
-
-  // useEffect(() => {
-  //   let protectCopy = [];
-  //   let info = [];
-  //   axios.get("http://localhost:5000/protectora").then((res) => {
-  //     info = res.data;
-  //     console.log(info);
-  //     for (const pro of info) {
-  //       if (
-  //         pro.city
-  //           .toLowerCase()
-  //           .includes(activeButtons.ciudad.toLocaleLowerCase())
-  //       ) {
-  //         protectCopy.push(pro);
-  //       }
-  //     }
-  //     setPortectorasF(protectCopy);
-  //   });
-  // }, [activeButtons]);
-
-
-
-
-  // useEffect(() => {
-  //   let protectCopy = [];
-  //   let protect = [];
-  //   axios.get("http://localhost:5000/protectora").then((res) => {
-  //     protect = res.data;
-  //     // console.log(protect);
-  //     for (const protectora of protect) {
-  //       if (
-  //         protectora.city
-  //           .toLowerCase()
-  //           .includes(activeButtons.ciudad.toLocaleLowerCase())
-  //       ) {
-  //         protectCopy.push(protectora);
-  //       }
-  //       for (const animal of protectora.animals) {
-  //         console.log(animal);
-  //         if (
-  //           animal.datos.especie
-  //             .toLowerCase()
-  //             .includes(activeButtons.especie.toLocaleLowerCase())
-  //         ) {
-  //           protectCopy.push(animal);
-  //         } else if (
-  //           animal.datos.sexo
-  //           .toLowerCase()
-  //           .includes(activeButtons.sexo.toLocaleLowerCase())) {
-  //             protectCopy.push(animal);
-  //         } else if (
-  //           animal.datos.tamaño
-  //           .toLowerCase()
-  //           .includes(activeButtons.tamaño.toLocaleLowerCase())) {
-  //           protectCopy.push(animal);
-  //         }
-  //       }
-  //     }
-  //     setPortectorasF(protectCopy);
-  //   });
-  // }, []);
-  // console.log(protectorasF);
+// useEffect(() => {
+//   let protectCopy = [];
+//   let protect = [];
+//   axios.get("http://localhost:5000/protectora").then((res) => {
+//     protect = res.data;
+//     // console.log(protect);
+//     for (const protectora of protect) {
+//       if (
+//         protectora.city
+//           .toLowerCase()
+//           .includes(activeButtons.ciudad.toLocaleLowerCase())
+//       ) {
+//         protectCopy.push(protectora);
+//       }
+//       for (const animal of protectora.animals) {
+//         console.log(animal);
+//         if (
+//           animal.datos.especie
+//             .toLowerCase()
+//             .includes(activeButtons.especie.toLocaleLowerCase())
+//         ) {
+//           protectCopy.push(animal);
+//         } else if (
+//           animal.datos.sexo
+//           .toLowerCase()
+//           .includes(activeButtons.sexo.toLocaleLowerCase())) {
+//             protectCopy.push(animal);
+//         } else if (
+//           animal.datos.tamaño
+//           .toLowerCase()
+//           .includes(activeButtons.tamaño.toLocaleLowerCase())) {
+//           protectCopy.push(animal);
+//         }
+//       }
+//     }
+//     setProtectorasF(protectCopy);
+//   });
+// }, []);
+// console.log(protectorasF);

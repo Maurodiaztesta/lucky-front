@@ -18,12 +18,14 @@ import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
 import MapPage from "./pages/MapPage/MapPage";
 import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
+import Warning from "./components/Warning/Warning"
 
 
 
 
 
 function App() {
+  
   return (
     <div>
     <Router>
@@ -34,7 +36,7 @@ function App() {
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
             <Route path="/login" element={<LoginPage></LoginPage>}/>
-            <Route path="/loginElection" element={<LoginElectionPage/>}/>            
+            <Route path="/loginElection" element={<LoginElectionPage/>}/>         
             <Route path="/profile" element={<ProfilePage/>}/>            
             <Route path="/more" element={<MasPage></MasPage>}/>            
             <Route path="/gallery" element={<Gallery/>}/> 
@@ -47,6 +49,7 @@ function App() {
             <Route path="/map" element={<MapPage></MapPage>}/>  
             <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
             <Route path="/notification" element={<NotificationPage></NotificationPage>}/>
+            <Route path="/warning" element={<Warning></Warning>}/>
           </Routes>
         </main>
       </Router> 
