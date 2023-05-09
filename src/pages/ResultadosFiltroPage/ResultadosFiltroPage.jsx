@@ -5,8 +5,13 @@ import "./ResultadosFiltroPage.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+
 const ResultadosFiltroPage = () => {
-  const [filtroAplicado, setFiltroAplicado] = useState([]);
+  const animalesFiltrados = useSelector(
+    (state) => state.animalesFiltrados
+  );
+  console.log(animalesFiltrados);
+
   const navigate = useNavigate();
   const [animales, setAnimales] = useState([]);
   const [search, setSearch] = useState("");

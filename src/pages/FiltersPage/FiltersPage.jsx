@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import "./FiltersPage.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
-
+import { useDispatch } from "react-redux";
+import { setAnimalesFiltrados } from "../../redux/actions/filter.actions";
 const FiltersPage = () => {
   const [protectoras, setProtectoras] = useState([]);
   const [select, setSelect] = useState("Barcelona");
-
+  const dispatch = useDispatch();
   const [especie, setEspecie] = useState("");
   const [tamaño, setTamaño] = useState("");
   const [sexo, setSexo] = useState("");
@@ -62,6 +62,7 @@ const FiltersPage = () => {
       }
     }
     console.log(animalesFiltrados);
+    dispatch(setAnimalesFiltrados(animalesFiltrados));
   };
   return (
     <div className="main">
@@ -439,7 +440,7 @@ const FiltersPage = () => {
               </p>
             </button>
             <button onClick={() => handleFilter()}>
-            Aplicar
+            <Link to="/filterResults">APLICAR</Link>
             </button>
           </div>
         </div>
