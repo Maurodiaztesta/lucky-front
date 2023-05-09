@@ -1,6 +1,7 @@
 import NavBar from "../../components/NavBar/NavBar";
 import "./MasPage.css"
 import React from "react";
+import Logout from "../../components/Out/logout"
 
 const MasPage = () => {
   return (
@@ -83,7 +84,8 @@ const MasPage = () => {
           ></img>
         </div>
         <div className="spaceG"></div>
-        <div className="OptContainer">
+        <Logout></Logout>
+        {/* <div className="OptContainer">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -97,7 +99,7 @@ const MasPage = () => {
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
-        </div>
+        </div> */}
       </div>
     </div>
     <NavBar></NavBar>

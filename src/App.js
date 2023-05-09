@@ -19,6 +19,7 @@ import FormConfirm from "./components/FormConfirm/FormConfirm";
 import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import Warning from "./components/Warning/Warning"
+import MapPage from "./pages/MapPage/MapPage";
 
 function App() {
   
