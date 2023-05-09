@@ -3,6 +3,7 @@ import "./LoginPage.css"
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { userLogin } from "../../redux/actions/auth.actions";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -10,9 +11,10 @@ const LoginPage = () => {
 
     const {register, handleSubmit, formState: { errors } } = useForm();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handeLogin = async(formData) => {
-        dispatch(userLogin(formData))
+        dispatch(userLogin(formData , navigate))
         console.log(formData);
     }
 

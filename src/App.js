@@ -19,6 +19,11 @@ import FormConfirm from "./components/FormConfirm/FormConfirm";
 import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import Warning from "./components/Warning/Warning"
+import AuthComponent from "./components/Auth/Authcomponent";
+import MapPage from "./pages/MapPage/MapPage";
+
+
+
 
 function App() {
   
@@ -40,7 +45,7 @@ function App() {
             <Route path="/filters" element={<FiltersPage/>}/> 
             <Route path="/perfilanimal" element={<PerfilAnimalPage></PerfilAnimalPage>}/> 
             <Route path="/donation" element={<DonationPage></DonationPage>}/>  
-            <Route path="/apadrinar" element={<ApadrinarPage></ApadrinarPage>}/>  
+            <Route path="/apadrinar" element={<AuthComponent component={<ApadrinarPage/>}/>}/>  
             <Route path="/sent" element={<FormConfirm></FormConfirm>}/>
             <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
             <Route path="/map" element={<MapPage></MapPage>}/>  
