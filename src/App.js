@@ -15,22 +15,26 @@ import PerfilAnimalPage from "./pages/PerfilAnimalPage/PerfilAnimalPage";
 import DonationPage from "./pages/DonationPage/DonationPage";
 import ApadrinarPage from "./pages/ApadrinarPage/ApadrinarPage";
 import EstadoAdopcionPage from "./pages/EstadoAdopcionPage/EstadoAdopcionPage";
+import AuthComponent from "./components/Auth/Authcomponent";
+import { useSelector } from "react-redux";
 
 
 
 
 function App() {
+  
   return (
     <div>
     <Router>
         <main>
           <Routes>
             <Route path="/" element={<SplashPage></SplashPage>}/>
-            <Route path="/home" element={<HomePage></HomePage>}/>
+            {/* <Route path="/home" element={<HomePage></HomePage>}/> */}
+            <Route path="/home" element={<AuthComponent component={<HomePage/>}/>}/>
             <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
             <Route path="/login" element={<LoginPage></LoginPage>}/>
-            <Route path="/loginElection" element={<LoginElectionPage/>}/>            
+            <Route path="/loginElection" element={<LoginElectionPage/>}/>         
             <Route path="/profile" element={<ProfilePage/>}/>            
             <Route path="/more" element={<MasPage></MasPage>}/>            
             <Route path="/gallery" element={<Gallery/>}/> 

@@ -1,12 +1,12 @@
 import axios from "axios";
-
+import Cookies from "js-cookie";
 const APIHeaders = {
     'Accept' : 'application/json',
     'Content-Type' : 'application/json',
     'Access-Control-Allow-Origin' : '*',
     'Authorization' : {
         toString(){
-            return `Bearer ${localStorage.getItem('token')}`;
+            return `Bearer ${Cookies.get('token')}`;
         }
     }
 }

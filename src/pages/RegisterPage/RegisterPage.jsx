@@ -1,24 +1,20 @@
 import { useForm } from "react-hook-form";
 import "./RegisterPage.css"
 import React from 'react'
-import { API } from "../../shared/api";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { handleRegister } from "../../redux/actions/auth.actions";
+
 
 const RegisterPage = () => {
   const {register, handleSubmit, formState: { errors } } = useForm();
-
-
-
-    
-    const userRegister =  async (formData) => {
-      console.log(formData);
-      const results = await API.post('/user/register' , formData);
-      console.log(results);
-      
-    }
-
+  const dispatch = useDispatch();
   
-
+    const userRegister =  async (formData) => {
+      dispatch(handleRegister(formData))
+      console.log(formData);
+    }
+    
+    
   return (
     <div className="father">
         <div className="father__header">

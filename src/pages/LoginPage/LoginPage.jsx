@@ -1,17 +1,19 @@
 import { useForm } from "react-hook-form";
 import "./LoginPage.css"
 import React from 'react'
-import { API } from "../../shared/api";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin } from "../../redux/actions/auth.actions";
+
+
 
 const LoginPage = () => {
 
     const {register, handleSubmit, formState: { errors } } = useForm();
+    const dispatch = useDispatch();
 
-    const userLogin = async(formData) => {
-        const results = await API.post("/user/login/" , formData);
-        console.log(results);
-        localStorage.setItem('user', JSON.stringify(results.data.userInfo));
-        localStorage.setItem('token', results.data.token);
+    const handeLogin = async(formData) => {
+        dispatch(userLogin(formData))
+        console.log(formData);
     }
 
 
@@ -22,7 +24,7 @@ return (
             <a href="http://localhost:3000/"><img className="login__header--img" src="/assets/img/logo/logo_titulo_junto.png"></img></a>
             <h3 className="login__header--title">¡Hola! para continuar, inicia sesión o crea una cuenta.</h3>
         </div>
-        <form className="login__form" onSubmit={handleSubmit(userLogin)}>
+        <form className="login__form" onSubmit={handleSubmit(handeLogin)}>
             <input placeholder="Email" className="login__form--input" type="email" {...register("email", { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i })}></input>
             {errors.email?.type === 'required' && "Email is required"}
             {errors.email?.type === 'pattern' && "Enter a valid email address: xxx@xxx.xx"}
