@@ -20,8 +20,7 @@ import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import Warning from "./components/Warning/Warning"
 import AuthComponent from "./components/Auth/Authcomponent";
-import Logout from "./components/Out/logout";
-
+import MapPage from "./pages/MapPage/MapPage";
 
 
 
