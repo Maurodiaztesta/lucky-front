@@ -21,6 +21,7 @@ import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import Warning from "./components/Warning/Warning"
 import AuthComponent from "./components/Auth/Authcomponent";
 import MapPage from "./pages/MapPage/MapPage";
+import ProtectorasPage from "./pages/ProtectorasPage/ProtectorasPage";
 
 
 
@@ -52,6 +53,7 @@ function App() {
             <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
             <Route path="/notification" element={<NotificationPage></NotificationPage>}/>
             <Route path="/warning" element={<Warning></Warning>}/>
+            <Route path="/protectoras" element={<ProtectorasPage></ProtectorasPage>}/>
           </Routes>
         </main>
       </Router> 
