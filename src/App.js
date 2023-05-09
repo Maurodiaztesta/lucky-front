@@ -19,6 +19,7 @@ import FormConfirm from "./components/FormConfirm/FormConfirm";
 import OnboardingPage from "./pages/OnboardingPage/OnboardingPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import Warning from "./components/Warning/Warning"
+import AdoptStateFilter from "./components/AdoptStateFilter/AdoptStateFilter";
 import AuthComponent from "./components/Auth/Authcomponent";
 import MapPage from "./pages/MapPage/MapPage";
 import ProtectorasPage from "./pages/ProtectorasPage/ProtectorasPage";
@@ -53,6 +54,7 @@ function App() {
             <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
             <Route path="/notification" element={<NotificationPage></NotificationPage>}/>
             <Route path="/warning" element={<Warning></Warning>}/>
+            <Route path="/AdoptFilter" element={<AdoptStateFilter></AdoptStateFilter>}/>
             <Route path="/protectoras" element={<ProtectorasPage></ProtectorasPage>}/>
           </Routes>
         </main>

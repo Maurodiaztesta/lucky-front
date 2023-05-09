@@ -13,7 +13,7 @@ const Searcher = ({ search, handleSearcher }) => {
           placeholder="Buscar"
           onChange={handleSearcher}
         />
-       <img className="back" src="../../assets/img/logo/filtro.png" alt="filter"></img>
+       
       </div>
     </div>
   )
