@@ -1,4 +1,21 @@
 .SearcherDiv {
   display: flex;
   align-items: flex-end;
+}
+
+.filter_results {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+
+.back_results {
+  width: 24px;
+  height: 24px;
+  margin-left: 15px;
+}
+
+.container_results {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=ResultadosFiltroPage.css.map */
