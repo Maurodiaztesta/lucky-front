@@ -21,7 +21,7 @@ const AdoptarPage = () => {
     setSearch(busqueda);
     if (animales.length > 0) {
       const filtrado = animales.filter((animal) =>
-        animal.datos.nombre.toLowerCase().includes(busqueda.toLowerCase())
+        animal.datos.especie.toLowerCase().includes(busqueda.toLowerCase())
       );
       setAnimalesFiltrados(filtrado);
     }
