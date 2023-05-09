@@ -23,6 +23,7 @@ import AdoptStateFilter from "./components/AdoptStateFilter/AdoptStateFilter";
 import AuthComponent from "./components/Auth/Authcomponent";
 import MapPage from "./pages/MapPage/MapPage";
 import ProtectorasPage from "./pages/ProtectorasPage/ProtectorasPage";
+import MiPerfilPage from "./pages/MiPerfilPage/MiPerfilPage";
 
 
 
@@ -56,6 +57,7 @@ function App() {
             <Route path="/warning" element={<Warning></Warning>}/>
             <Route path="/AdoptFilter" element={<AdoptStateFilter></AdoptStateFilter>}/>
             <Route path="/protectoras" element={<ProtectorasPage></ProtectorasPage>}/>
+            <Route path="/userprofile" element={<MiPerfilPage></MiPerfilPage>}/>
           </Routes>
         </main>
       </Router> 
