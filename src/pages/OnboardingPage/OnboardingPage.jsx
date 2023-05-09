@@ -3,12 +3,11 @@ import "./OnboardingPage.css";
 import React, { useState } from "react";
 
 const OnboardingPage = () => {
+  const [vista, setVista] = useState("1");
 
-    const [vista, setVista] = useState("1");
-
-    const cambiarVista = (nuevaVista) => {
-        setVista(nuevaVista);
-    }
+  const cambiarVista = (nuevaVista) => {
+    setVista(nuevaVista);
+  };
   const Onboarding1 = () => {
     return (
       <div className="padreO">
@@ -119,16 +118,16 @@ const OnboardingPage = () => {
             ></img>
           </Link>
         </div>
-        <div className="padreO__top">
-          <img
-            className="padreO__top--img"
-            src="../../assets/img/imagenes/chico_gato.png"
-            alt="x"
-          ></img>
-          <h2 className="padreO__top--h2">
-            Si eres una asociación sube a tus peludos para darles más difusión
-          </h2>
-        </div>
+        <Link to="/loginElection" className="padreO__top">
+            <img
+              className="padreO__top--img"
+              src="../../assets/img/imagenes/chico_gato.png"
+              alt="x"
+            ></img>
+            <h2 className="padreO__top--h2">
+              Si eres una asociación sube a tus peludos para darles más difusión
+            </h2>
+        </Link>
         <div className="padreO__bot">
           <a className="padreO__bot--a" onClick={() => cambiarVista("1")}>
             <img
