@@ -69,7 +69,7 @@ const ProfilePage = () => {
           ></img>
         </Link>
         <div className="OptContainer">
-          <Link className="map" to="/map">
+          <Link className="OptContainer" to="/map">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -77,12 +77,12 @@ const ProfilePage = () => {
               alt="Perfil"
             ></img>
             <h3 className="opt_text">Direcciones </h3>
+          </div>
           <img
-            className="arrow2"
+            className="arrow"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
-          </div>
           </Link>
         </div>
         <div className="OptContainer">
@@ -101,7 +101,7 @@ const ProfilePage = () => {
           ></img>
         </div>
         <div className="OptContainer">
-        <Link className="notification" to="/notification">
+        <Link className="OptContainer" to="/notification">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -109,17 +109,17 @@ const ProfilePage = () => {
               alt="Perfil"
             ></img>
             <h3 className="opt_text">Notificaciones </h3>
+          </div>
           <img
-            className="arrow_notification"
+            className="arrow"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
-          </div>
           </Link>
         </div>
         <div className="space"></div>
         <div className="OptContainer">
-        <Link className="Status" to="/status">
+        <Link className="OptContainer" to="/status">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -127,16 +127,16 @@ const ProfilePage = () => {
               alt="Perfil"
             ></img>
             <h3 className="opt_text">Estado de adopción </h3>
+          </div>
           <img
             className="arrow"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
-          </div>
           </Link>
         </div>
         <div className="OptContainer">
-          <Link className="Apadrinar" to="/Apadrinar">
+          <Link className="OptContainer" to="/Apadrinar">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -144,16 +144,16 @@ const ProfilePage = () => {
               alt="Perfil"
             ></img>
             <h3 className="opt_text">Apadrinar </h3>
+          </div>
           <img
-            className="arrow_apadrinar"
+            className="arrow"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
-          </div>
           </Link>
         </div>
         <div className="OptContainer">
-        <Link className="Donar" to="/donation">
+        <Link className="OptContainer" to="/donation">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -161,12 +161,12 @@ const ProfilePage = () => {
               alt="Perfil"
             ></img>
             <h3 className="opt_text">Donar </h3>
+          </div>
           <img
-            className="arrow_donation"
+            className="arrow"
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
-          </div>
           </Link>
         </div>
         

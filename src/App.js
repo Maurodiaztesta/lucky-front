@@ -48,7 +48,7 @@ function App() {
             <Route path="/profile" element={<AuthComponent component={<ProfilePage/>}/>}/>            
             <Route path="/more" element={<AuthComponent component={<MasPage/>}/>}/>            
             <Route path="/gallery" element={<Gallery/>}/> 
-            <Route path="/filtersResult" element={<AuthComponent component={<ResultadosFiltroPage/>}/>}/> 
+            <Route path="/filterResults" element={<AuthComponent component={<ResultadosFiltroPage/>}/>}/> 
             <Route path="/filters" element={<FiltersPage/>}/> 
             <Route path="/perfilanimal" element={<PerfilAnimalPage></PerfilAnimalPage>}/> 
             <Route path="/donation" element={<AuthComponent component={<DonationPage/>}/>}/>  

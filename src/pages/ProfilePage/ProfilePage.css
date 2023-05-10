@@ -5,6 +5,8 @@
   margin-top: 40px;
 }
 .ProfileHolePage .ProfContainer {
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex;
   flex-direction: column;
   margin-top: 73px;
@@ -53,11 +55,11 @@
 }
 .ProfileHolePage .ProfOptions {
   margin-left: 10px;
-  align-content: center;
+  align-content: baseline;
   border-radius: 1px;
   border-color: rgb(1, 116, 142);
   display: flex;
-  width: 352px;
+  width: 100%;
   height: 50px;
   align-items: center;
 }
@@ -75,62 +77,11 @@
   height: 10px;
 }
 .ProfileHolePage .OptContainer {
-  width: 90%;
+  width: 100%;
   display: flex;
   align-items: center;
   border: 1px solid rgb(189, 210, 214);
   border-radius: 4px;
-}
-.ProfileHolePage .arrow {
-  width: 8px;
-  height: 14px;
-  align-items: end;
-  display: flex;
-  margin-right: 10px;
-  margin-left: 120px;
-}
-.ProfileHolePage .arrow2 {
-  width: 8px;
-  height: 14px;
-  align-items: end;
-  display: flex;
-  margin-right: 10px;
-  margin-left: 183px;
-}
-.ProfileHolePage .arrow1 {
-  width: 8px;
-  height: 14px;
-  align-items: end;
-  display: flex;
-  margin-right: 10px;
-  margin-left: 80px;
-}
-.ProfileHolePage .arrow_apadrinar {
-  width: 8px;
-  height: 14px;
-  align-items: end;
-  display: flex;
-  margin-right: 10px;
-  margin-left: 190px;
-  justify-content: end;
-}
-.ProfileHolePage .arrow_donation {
-  width: 8px;
-  height: 14px;
-  align-items: end;
-  display: flex;
-  margin-right: 10px;
-  margin-left: 223px;
-  justify-content: end;
-}
-.ProfileHolePage .arrow_notification {
-  width: 8px;
-  height: 14px;
-  align-items: end;
-  display: flex;
-  margin-right: 10px;
-  margin-left: 163px;
-  justify-content: end;
 }
 .ProfileHolePage a {
   text-decoration: none;
