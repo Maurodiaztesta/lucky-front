@@ -4,35 +4,41 @@ import "./ProfilePage.css";
 
 import React, { useState } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { useCookies } from "react-cookie";
 
 const ProfilePage = () => {
+
+  const [cookies] = useCookies(["user"]);
+
+  const userInfo = cookies.user;
 
   const [imageUrl, setImageUrl] = useState(null);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
 
-    if (file) {
-      const reader = new FileReader();
+  if (file) {
+    const reader = new FileReader();
 
-      reader.onloadend = () => {
-        setImageUrl(reader.result);
-      };
+    reader.onloadend = () => {
+      const url = reader.result;
+      setImageUrl(url);
 
-      reader.readAsDataURL(file);
-    }
-
-    if (imageUrl) {
       axios
-        .post("URL", { imageUrl })
+        .put(`http://localhost:5000/user/${userInfo._id}`, { imageUrl: url })
         .then(response => {
           console.log("Imagen enviada correctamente a la base de datos");
         })
         .catch(error => {
           console.error("Error al enviar la imagen a la base de datos:", error);
         });
-    }
+    };
+    console.log(imageUrl);
+    reader.readAsDataURL(file);
   }
+  }
+  console.log(imageUrl);
 
   return (
     <div className="ProfileHolePage">

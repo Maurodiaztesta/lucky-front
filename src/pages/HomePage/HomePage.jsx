@@ -4,18 +4,23 @@ import NavBar from "../../components/NavBar/NavBar";
 import SwiperHome from "../../components/Swiper/SwiperHome";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserInfo } from "../../redux/actions/auth.actions";
+import { useCookies } from "react-cookie";
 
 
 const HomePage = () => {
 
-  const userInfo = useSelector((state) => state.auth.userInfo);
+  // const userInfo = useSelector((state) => state.auth.userInfo);
+  // console.log(userInfo);
+  const [cookies] = useCookies(["user"]);
+
+  const userInfo = cookies.user;
   console.log(userInfo);
 
   return (
     <div>
       <div className="HPpadre">
         <div className="HPpadre__header">
-          {userInfo === null ? <h2 className="HPpadre__header--saludo">¡Hola!</h2> : <h2 className="HPpadre__header--saludo">¡Hola {userInfo?.name}!</h2>}
+          {!userInfo? <h2 className="HPpadre__header--saludo">¡Hola!</h2> : <h2 className="HPpadre__header--saludo">¡Hola {userInfo?.name}!</h2>}
           {/* <h1>Colocar slider</h1> */}
           <div className="HPpadre__header--swiper">
             <SwiperHome></SwiperHome>
