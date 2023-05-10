@@ -41,28 +41,28 @@ function App() {
             <Route path="/form" element={<Form/>}/>
             <Route path="/" element={<SplashPage></SplashPage>}/>
             <Route path="/home" element={<HomePage></HomePage>}/>
-            <Route path="/adopt" element={<AdoptarPage></AdoptarPage>}/>
+            <Route path="/adopt" element={<AuthComponent component={<AdoptarPage/>}/>}/>
             <Route path="/register" element={<RegisterPage></RegisterPage>}/>
             <Route path="/login" element={<LoginPage></LoginPage>}/>
             <Route path="/loginElection" element={<LoginElectionPage/>}/>         
-            <Route path="/profile" element={<ProfilePage/>}/>            
-            <Route path="/more" element={<MasPage></MasPage>}/>            
+            <Route path="/profile" element={<AuthComponent component={<ProfilePage/>}/>}/>            
+            <Route path="/more" element={<AuthComponent component={<MasPage/>}/>}/>            
             <Route path="/gallery" element={<Gallery/>}/> 
-            <Route path="/filterResults" element={<ResultadosFiltroPage/>}/> 
+            <Route path="/filtersResult" element={<AuthComponent component={<ResultadosFiltroPage/>}/>}/> 
             <Route path="/filters" element={<FiltersPage/>}/> 
             <Route path="/perfilanimal" element={<PerfilAnimalPage></PerfilAnimalPage>}/> 
-            <Route path="/donation" element={<DonationPage></DonationPage>}/>  
+            <Route path="/donation" element={<AuthComponent component={<DonationPage/>}/>}/>  
             <Route path="/apadrinar" element={<AuthComponent component={<ApadrinarPage/>}/>}/>  
             <Route path="/sent" element={<FormConfirm></FormConfirm>}/>
-            <Route path="/status" element={<EstadoAdopcionPage></EstadoAdopcionPage>}/>  
+            <Route path="/status" element={<AuthComponent component={<AdoptStateFilter/>}/>}/>  
             <Route path="/map" element={<MapPage></MapPage>}/>  
             <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
             <Route path="/notification" element={<NotificationPage></NotificationPage>}/>
             <Route path="/warning" element={<Warning></Warning>}/>
-            <Route path="/AdoptFilter" element={<AdoptStateFilter></AdoptStateFilter>}/>
+            <Route path="/AdoptFilter" element={<AuthComponent component={<AdoptStateFilter/>}/>}/>
             <Route path="/protectoras" element={<ProtectorasPage></ProtectorasPage>}/>
             <Route path="/userprofile" element={<MiPerfilPage></MiPerfilPage>}/>
-            <Route path="/perfil" element={<PerfilAnimal/>}/>
+            <Route path="/perfil" element={<AuthComponent component={<PerfilAnimal/>}/>}/>
           </Routes>
         </main>
       </Router>
