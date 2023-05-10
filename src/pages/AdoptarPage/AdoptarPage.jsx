@@ -44,11 +44,6 @@ const AdoptarPage = () => {
               <h2 className="APpadre__top--mascotas--añadir--h2">
                 Mis mascotas
               </h2>
-              <img
-                className="APpadre__top--mascotas--añadir--img"
-                src="/assets/img/logo_seleccionado/mS.png"
-                alt=""
-              ></img>
             </div>
             <p className="APpadre__top--mascotas--add">
               Accede al perfil de tus mascotas
