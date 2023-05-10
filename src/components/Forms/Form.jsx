@@ -16,7 +16,7 @@ const Form = () => {
             CalleNumeroPiso: "",
             CodigoPostal: "",
             Ciudad: "",
-            Usuario: "6455351f4ceea66c37a222b6",
+            Usuario: "6455351f4ceea66c37a222b6", //RECOGER ID USUARIO DE PERFIL ANIMAL
         },
         Mascota: {
             OtrosAnimales: false,
@@ -26,7 +26,7 @@ const Form = () => {
             NecesidadesAnimal: "",
             Gastos: "",
             Alimentacion: "",
-            Animales: "645691a200cf09d6b0fdf3c1"
+            Animales: "645691a200cf09d6b0fdf3c1" //Recoger ID ANIMAL DE PERFIL ANIMAL
         },
         FamiliaHogar: {
             DondeVives: "",

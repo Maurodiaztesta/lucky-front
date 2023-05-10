@@ -25,6 +25,7 @@ import MapPage from "./pages/MapPage/MapPage";
 import ProtectorasPage from "./pages/ProtectorasPage/ProtectorasPage";
 import MiPerfilPage from "./pages/MiPerfilPage/MiPerfilPage";
 import Form from "./components/Forms/Form";
+import PerfilAnimal from "./pages/PerfilAnimal/PerfilAnimal";
 
 
 
@@ -61,6 +62,7 @@ function App() {
             <Route path="/AdoptFilter" element={<AdoptStateFilter></AdoptStateFilter>}/>
             <Route path="/protectoras" element={<ProtectorasPage></ProtectorasPage>}/>
             <Route path="/userprofile" element={<MiPerfilPage></MiPerfilPage>}/>
+            <Route path="/perfil" element={<PerfilAnimal/>}/>
           </Routes>
         </main>
       </Router>
