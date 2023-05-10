@@ -2,18 +2,51 @@ import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import "./ProfilePage.css";
 
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 const ProfilePage = () => {
+
+  const [imageUrl, setImageUrl] = useState(null);
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        setImageUrl(reader.result);
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    if (imageUrl) {
+      axios
+        .post("URL", { imageUrl })
+        .then(response => {
+          console.log("Imagen enviada correctamente a la base de datos");
+        })
+        .catch(error => {
+          console.error("Error al enviar la imagen a la base de datos:", error);
+        });
+    }
+  }
+
   return (
     <div className="ProfileHolePage">
       <div className="ProfContainer">
         <div className="Img_Center">
-          <img
+          {!imageUrl && <img
             className="ImageProf"
-            src="../../../assets/img/logo_seleccionado/group.png"
+            src="../../../assets/img/logo/userBlue.png"
             alt="profileIMG"
-          ></img>
+          ></img>}
+          {imageUrl && <img className="ImageProf" src={imageUrl} alt="Imagen seleccionada" />}
+          {!imageUrl && <div className="file-select" id="src-file1">
+            <input name="src-file1" aria-label="Archivo" onChange={handleImageChange} type="file"></input>
+          </div>}
         </div>
         <div className="OptContainer">
           <div className="ProfOptions">

@@ -13,12 +13,43 @@
 }
 .ProfileHolePage .Img_Center {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
 .ProfileHolePage .ImageProf {
   width: 71px;
   height: 71px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.ProfileHolePage .file-select {
+  position: relative;
+  display: inline-block;
+}
+.ProfileHolePage .file-select::before {
+  background-color: #FA9C93;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  content: "Seleccionar"; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.ProfileHolePage #src-file1::before {
+  content: "Subir imagen";
+}
+.ProfileHolePage .file-select input[type=file] {
+  opacity: 0;
+  width: 100px;
+  height: 30px;
+  display: inline-block;
 }
 .ProfileHolePage .ProfOptions {
   margin-left: 10px;
