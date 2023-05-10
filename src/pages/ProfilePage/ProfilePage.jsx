@@ -4,41 +4,35 @@ import "./ProfilePage.css";
 
 import React, { useState } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux";
-import { useCookies } from "react-cookie";
 
 const ProfilePage = () => {
-
-  const [cookies] = useCookies(["user"]);
-
-  const userInfo = cookies.user;
 
   const [imageUrl, setImageUrl] = useState(null);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
 
-  if (file) {
-    const reader = new FileReader();
+    if (file) {
+      const reader = new FileReader();
 
-    reader.onloadend = () => {
-      const url = reader.result;
-      setImageUrl(url);
+      reader.onloadend = () => {
+        setImageUrl(reader.result);
+      };
 
+      reader.readAsDataURL(file);
+    }
+
+    if (imageUrl) {
       axios
-        .put(`http://localhost:5000/user/${userInfo._id}`, { imageUrl: url })
+        .post("URL", { imageUrl })
         .then(response => {
           console.log("Imagen enviada correctamente a la base de datos");
         })
         .catch(error => {
           console.error("Error al enviar la imagen a la base de datos:", error);
         });
-    };
-    console.log(imageUrl);
-    reader.readAsDataURL(file);
+    }
   }
-  }
-  console.log(imageUrl);
 
   return (
     <div className="ProfileHolePage">
@@ -54,7 +48,7 @@ const ProfilePage = () => {
             <input name="src-file1" aria-label="Archivo" onChange={handleImageChange} type="file"></input>
           </div>}
         </div>
-        <div className="OptContainer">
+        <Link to="/userprofile" className="OptContainer">
           <div className="ProfOptions">
             <img
               className="opt_img"
@@ -68,7 +62,7 @@ const ProfilePage = () => {
             src="../../../assets/img/logo_seleccionado/arrow.png"
             alt=""
           ></img>
-        </div>
+        </Link>
         <div className="OptContainer">
           <Link className="map" to="/map">
           <div className="ProfOptions">
