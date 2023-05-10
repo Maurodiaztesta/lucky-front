@@ -6,8 +6,16 @@ import NavBar from "../../components/NavBar/NavBar";
 import SwiperAdoption from "../../components/SwiperAdoption/SwiperAdoption";
 import Gallery from "../../components/Gallery/Gallery";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Cookies from "js-cookie";
 
 const AdoptarPage = () => {
+
+  // let info = Cookies.get("user");
+  // info = JSON.stringify(info)
+  // console.log(info);
+
+
   const [animales, setAnimales] = useState([]);
   const [search, setSearch] = useState("");
   const [animalesFiltrados, setAnimalesFiltrados] = useState([]);
