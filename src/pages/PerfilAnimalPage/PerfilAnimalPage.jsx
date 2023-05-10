@@ -2,19 +2,11 @@ import axios from "axios";
 import "./PerfilAnimalPage.css";
 import moment from "moment"; // para fecha
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
-const PerfilAnimalPage = ({ animalId }) => {
+const PerfilAnimalPage = ({ animal }) => {
   const [vista, setVista] = useState("datos");
-  const [animales, setAnimales] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5000/animales/64590aa12da8eb444a5c5767`)
-      .then((res) => {
-        setAnimales([res.data]);
-        console.log(res.data);
-      });
-  }, [animalId]);
+  
 
   const cambiarVista = (nuevaVista) => {
     setVista(nuevaVista);
@@ -23,8 +15,7 @@ const PerfilAnimalPage = ({ animalId }) => {
   const DatosAnimal = () => {
     return (
       <div>
-        {animales.map((animal) => (
-          <div className="principal" key={animal._id}>
+          <div className="principal">
             <div className="principal__hijo">
               <div className="principal__hijo--linea">
                 <p className="principal__hijo--linea--clave">Nombre</p>
@@ -60,7 +51,7 @@ const PerfilAnimalPage = ({ animalId }) => {
               <p className="principal__historia--datos">{animal.datos.historia}</p>
             </div>
           </div>
-        ))}
+      
       </div>
     );
   };
@@ -68,8 +59,8 @@ const PerfilAnimalPage = ({ animalId }) => {
   const SaludAnimal = () => {
     return (
       <div>
-        {animales.map((animal) => (
-          <div className="principal" key={animal._id}>
+        
+          <div className="principal" >
             <div className="principal__hijo">
                 <div className="principal__hijo--linea">
                   <p className="principal__hijo--linea--clave">Vacunado</p>
@@ -100,7 +91,7 @@ const PerfilAnimalPage = ({ animalId }) => {
               <p className="principal__info--text">Tienes que saber que...</p>
             </div>
           </div>
-        ))}
+    
       </div>
     );
   };
@@ -108,8 +99,8 @@ const PerfilAnimalPage = ({ animalId }) => {
   const AdopcionAnimal = () => {
     return (
       <div>
-        {animales.map((animal) => (
-          <div className="principal" key={animal._id}>
+        
+          <div className="principal">
             <div className="principal__caja">
               <h3 className="principal__caja--titulo">Requisitos adopción</h3>
               <p className="principal__caja--dato">{animal.adopcion.requisitos}</p>
@@ -123,16 +114,14 @@ const PerfilAnimalPage = ({ animalId }) => {
               <p className="principal__caja--dato">{animal.adopcion.envioOtraCiudad ? "Sí" : "No"}</p>
             </div>
           </div>
-        ))}
       </div>
     );
   };
   const ImagenAnimal = () => {
     return (
       <div className="header">
-        {animales.map((animal) => (
             <img className="header__img" key={animal._id} src={animal.datos.imagen} alt="imagen-animal"></img>
-        ))}
+    
       </div>
     );
   };
