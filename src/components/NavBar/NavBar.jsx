@@ -1,8 +1,15 @@
 import React from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 const NavBar = () => {
+
+  const [cookies] = useCookies(["user"]);
+
+  const userInfo = cookies.user;
+  console.log(userInfo);
+
   return (
     <>
       <nav className="NavBar">
@@ -46,17 +53,25 @@ const NavBar = () => {
           ></img>
         </Link>}
         {window.location.pathname === "/profile" ? <Link to="/profile">
-          <img
+          {!userInfo ? <img
             className="NavLogo__border"
-            src="../../assets/img/logo/perfil.png"
+            src="../../assets/img/logo/userBlue.png"
             alt="profile"
-          ></img>
+          ></img> : <img
+            className="NavLogo__border"
+            src={userInfo.imagen}
+            alt="profile"
+          ></img>}
         </Link> : <Link to="/profile">
-          <img
+          {userInfo ? <img
             className="NavLogo"
-            src="../../assets/img/logo/perfil.png"
+            src={userInfo.imagen}
             alt="profile"
-          ></img>
+          ></img> : <img
+            className="NavLogo"
+            src="../../assets/img/logo/userBlue.png"
+            alt="profile"
+          ></img>}
         </Link>}
         {window.location.pathname === "/more" ? <Link to="/more">
           <img
