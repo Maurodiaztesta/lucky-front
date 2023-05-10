@@ -54,7 +54,7 @@ function App() {
             <Route path="/donation" element={<AuthComponent component={<DonationPage/>}/>}/>  
             <Route path="/apadrinar" element={<AuthComponent component={<ApadrinarPage/>}/>}/>  
             <Route path="/sent" element={<FormConfirm></FormConfirm>}/>
-            <Route path="/status" element={<AuthComponent component={<AdoptStateFilter/>}/>}/>  
+            <Route path="/status" element={<AuthComponent component={<EstadoAdopcionPage/>}/>}/>  
             <Route path="/map" element={<MapPage></MapPage>}/>  
             <Route path="/onboarding" element={<OnboardingPage></OnboardingPage>}/>
             <Route path="/notification" element={<NotificationPage></NotificationPage>}/>
