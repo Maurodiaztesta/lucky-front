@@ -154,4 +154,12 @@
 }
 .imagen__img {
   width: 100%;
+}
+
+.IMG_possition_abosolute {
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  height: 25px;
+  width: 25px;
 }/*# sourceMappingURL=PerfilAnimalPage.css.map */
