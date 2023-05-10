@@ -25,7 +25,7 @@ const Warning = (props) => {
             Cancelar
           </button>
           </Link>
-          <Link to="/">
+          <Link to="/form">
           <button className="padreW__hijo--botones--2">
             Continuar
           </button>
