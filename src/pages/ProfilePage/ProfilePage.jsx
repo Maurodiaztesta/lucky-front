@@ -4,10 +4,15 @@ import "./ProfilePage.css";
 
 import React, { useState } from "react";
 import axios from "axios";
+import { useCookies } from "react-cookie";
 
 const ProfilePage = () => {
 
   const [imageUrl, setImageUrl] = useState(null);
+
+  const [cookies] = useCookies(["user"]);
+
+  const userInfo = cookies.user;
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -24,7 +29,7 @@ const ProfilePage = () => {
 
     if (imageUrl) {
       axios
-        .post("URL", { imageUrl })
+        .post(`http://localhost:5000/user/${userInfo._id}`, { imageUrl })
         .then(response => {
           console.log("Imagen enviada correctamente a la base de datos");
         })
