@@ -3,10 +3,12 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import './Form.css'
 import ProgressBar from '../ProgressBar/ProgressBar';
+import FormConfirm from '../FormConfirm/FormConfirm';
 
 
-const Form = () => {
+const Form = (props) => {
     const [part, setPart] = useState(1);
+    const [showModal, setShowModal] = useState(false);
     const [data, setData] = useState({
         Datos: {
             NombreApellidos: "",
@@ -212,9 +214,14 @@ const Form = () => {
                         </div>
                     </div>
                     <div className='content'>
-                        <button type='submit' className='content__btn' onClick={handleSubmit}>Enviar</button>
+                        <button type='submit' className='content__btn' onClick={() => setShowModal(true)} onSubmit={handleSubmit}>Enviar</button>
                     </div>
-                </div>
+                    {showModal && (
+          <div className="modal" onClick={props.onApply}>
+            <FormConfirm />
+          </div>
+        )}
+            </div>
             )}
         </form>
     )

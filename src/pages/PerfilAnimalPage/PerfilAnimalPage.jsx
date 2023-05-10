@@ -1,10 +1,12 @@
 import "./PerfilAnimalPage.css";
 import moment from "moment"; // para fecha
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import Warning from "../../components/Warning/Warning";
 
-const PerfilAnimalPage = ({ animal }) => {
+const PerfilAnimalPage = ({ animal },props) => {
   const [vista, setVista] = useState("datos");
+  const [showModal, setShowModal] = useState(false);
 
   const cambiarVista = (nuevaVista) => {
     setVista(nuevaVista);
@@ -153,6 +155,7 @@ const PerfilAnimalPage = ({ animal }) => {
   const ImagenAnimal = () => {
     return (
       <div className="imagen">
+      
         <img
           className="imagen__img"
           key={animal._id}
@@ -166,6 +169,7 @@ const PerfilAnimalPage = ({ animal }) => {
   return (
     <div className="mainPage">
       <div className="mainPage__header">
+      <Link to={"/adopt"}><img className="IMG_possition_abosolute" src="../../../assets/img/logo/back.png" alt=""></img></Link>
         <ImagenAnimal></ImagenAnimal>
       </div>
       <div className="mainPage__menu">
@@ -207,19 +211,24 @@ const PerfilAnimalPage = ({ animal }) => {
         {vista === "salud" && <SaludAnimal />}
         {vista === "adopcion" && <AdopcionAnimal />}
         <div className="mainPage__button">
-          <button
+        <Link to={"/Apadrinar"}><button
             className="mainPage__button--apa"
-            onClick={() => console.log("Apadrinar")}
+            
           >
             Apadrinar
-          </button>
+          </button></Link>
           <button
             className="mainPage__button--adop"
-            onClick={() => console.log("Adoptar")}
+            onClick={() => setShowModal(true)}
           >
             Adoptar
           </button>
         </div>
+        {showModal && (
+          <div className="modal" onClick={props.onApply}>
+            <Warning />
+          </div>
+        )}
       </div>
     </div>
   );

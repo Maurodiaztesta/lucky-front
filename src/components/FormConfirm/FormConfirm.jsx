@@ -2,7 +2,7 @@ import "./FormConfirm.css";
 import { Link } from "react-router-dom";
 import React from "react";
 
-const FormConfirm = () => {
+const FormConfirm = (props)=> {
   return (
     <div className="confirm-padre">
       <div className="confirm-content">
