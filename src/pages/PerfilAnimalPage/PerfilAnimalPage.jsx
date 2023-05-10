@@ -2,20 +2,37 @@ import axios from "axios";
 import "./PerfilAnimalPage.css";
 import moment from "moment"; // para fecha
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import Warning from "../../components/Warning/Warning";
 
-const PerfilAnimalPage = ({ animal }) => {
+const PerfilAnimalPage = ({ animalId },props) => {
   const [vista, setVista] = useState("datos");
-  
+  const [animales, setAnimales] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/animales/64590aa12da8eb444a5c5767`)
+      .then((res) => {
+        setAnimales([res.data]);
+        console.log(res.data);
+      });
+  }, [animalId]);
 
   const cambiarVista = (nuevaVista) => {
     setVista(nuevaVista);
   };
 
   const DatosAnimal = () => {
+
+    // const handleApplyFilter = (e) => {
+    //   e.stopPropagation();
+    //   setShowModal(false);
+    // };
+
     return (
       <div>
-          <div className="principal">
+        {animales.map((animal) => (
+          <div className="principal" key={animal._id}>
             <div className="principal__hijo">
               <div className="principal__hijo--linea">
                 <p className="principal__hijo--linea--clave">Nombre</p>
@@ -51,7 +68,7 @@ const PerfilAnimalPage = ({ animal }) => {
               <p className="principal__historia--datos">{animal.datos.historia}</p>
             </div>
           </div>
-      
+        ))}
       </div>
     );
   };
@@ -59,8 +76,8 @@ const PerfilAnimalPage = ({ animal }) => {
   const SaludAnimal = () => {
     return (
       <div>
-        
-          <div className="principal" >
+        {animales.map((animal) => (
+          <div className="principal" key={animal._id}>
             <div className="principal__hijo">
                 <div className="principal__hijo--linea">
                   <p className="principal__hijo--linea--clave">Vacunado</p>
@@ -91,7 +108,7 @@ const PerfilAnimalPage = ({ animal }) => {
               <p className="principal__info--text">Tienes que saber que...</p>
             </div>
           </div>
-    
+        ))}
       </div>
     );
   };
@@ -99,8 +116,8 @@ const PerfilAnimalPage = ({ animal }) => {
   const AdopcionAnimal = () => {
     return (
       <div>
-        
-          <div className="principal">
+        {animales.map((animal) => (
+          <div className="principal" key={animal._id}>
             <div className="principal__caja">
               <h3 className="principal__caja--titulo">Requisitos adopción</h3>
               <p className="principal__caja--dato">{animal.adopcion.requisitos}</p>
@@ -114,13 +131,16 @@ const PerfilAnimalPage = ({ animal }) => {
               <p className="principal__caja--dato">{animal.adopcion.envioOtraCiudad ? "Sí" : "No"}</p>
             </div>
           </div>
+        ))}
       </div>
     );
   };
   const ImagenAnimal = () => {
     return (
-      <div className="imagen">
-            <img className="imagen__img" key={animal._id} src={animal.datos.imagen} alt="imagen-animal"></img>
+      <div className="header">
+        {animales.map((animal) => (
+            <img className="header__img" key={animal._id} src={animal.datos.imagen} alt="imagen-animal"></img>
+        ))}
       </div>
     );
   };
@@ -158,8 +178,13 @@ const PerfilAnimalPage = ({ animal }) => {
         {vista === "adopcion" && <AdopcionAnimal />}
         <div className="mainPage__button">
           <button className="mainPage__button--apa" onClick={() => console.log("Apadrinar")}>Apadrinar</button>
-          <button className="mainPage__button--adop" onClick={() => console.log("Adoptar")}>Adoptar</button>
+          <button className="mainPage__button--adop" onClick={() => setShowModal(true)}>Adoptar</button>
         </div>
+        {showModal && (
+          <div className="modal" onClick={props.onApply}>
+            <Warning />
+          </div>
+        )}
       </div>
     </div>
   );

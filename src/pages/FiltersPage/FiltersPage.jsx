@@ -95,7 +95,7 @@ const FiltersPage = () => {
           <h2>Filtros</h2>
         </div>
         <div className="main__header--x">
-          <Link to="">
+          <Link to="/adopt">
             <img src="./assets/img/logo_seleccionado/x.png" alt="x"></img>
           </Link>
         </div>
