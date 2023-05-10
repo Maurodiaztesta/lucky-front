@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './NotificationPage.css';
 import NotificationItem from '../../components/NotificationItem/NotificationItem';
+import { Link } from 'react-router-dom';
 
 
 function NotificationPage() {
@@ -63,7 +64,8 @@ function NotificationPage() {
   ]);
 
   return (
-    <div className='notification_padre'>
+    <div className='padreN'>
+      <Link className='linkImg' to="/profile"><img className='imageNP' src='../../../assets/img/logo/back.png' alt='atras'></img></Link>
       <h1 className='title_notificaciones'>Notificaciones</h1>
       {notifications.map(notification => (
         <NotificationItem key={notification.id} notification={notification} />
