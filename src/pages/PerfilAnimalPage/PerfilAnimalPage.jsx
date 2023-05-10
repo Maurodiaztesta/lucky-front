@@ -119,9 +119,8 @@ const PerfilAnimalPage = ({ animal }) => {
   };
   const ImagenAnimal = () => {
     return (
-      <div className="header">
-            <img className="header__img" key={animal._id} src={animal.datos.imagen} alt="imagen-animal"></img>
-    
+      <div className="imagen">
+            <img className="imagen__img" key={animal._id} src={animal.datos.imagen} alt="imagen-animal"></img>
       </div>
     );
   };
