@@ -56,6 +56,7 @@ const Form = (props) => {
         setData({ ...watch(), [e.target.name]: e.target.value });
     }
     const handleSubmit = ($event) => {
+        setShowModal(true)
         $event.preventDefault();
         axios.post("http://localhost:5000/adopcion", data).then(res => {
             console.log(res);
@@ -214,7 +215,7 @@ const Form = (props) => {
                         </div>
                     </div>
                     <div className='content'>
-                        <button type='submit' className='content__btn' onClick={() => setShowModal(true)} onSubmit={handleSubmit}>Enviar</button>
+                        <button type='submit' className='content__btn'  onClick={handleSubmit}>Enviar</button>
                     </div>
                     {showModal && (
           <div className="modal" onClick={props.onApply}>
